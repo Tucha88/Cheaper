@@ -11,6 +11,7 @@ import GoogleMaps
 import GooglePlaces
 import Alamofire
 import CoreLocation
+import Pulley
 
 protocol FeedbackViewControllerDelegate: class {
     func feedbackViewSetInfo(cheaperPlaseFeedback:[PlaceFeedback],cheaperPlaceInfo:CheaperPalce)
@@ -46,7 +47,8 @@ class MapController: UIViewController,CLLocationManagerDelegate,GMSMapViewDelega
 
         mapView.delegate = self
         mapView.settings.myLocationButton = true
-        
+        let drawer = self.parent as? PulleyViewController
+        drawer?.setDrawerPosition(position: .closed, animated: false)
         
         
     }

@@ -20,7 +20,11 @@ class CheaperPlaceFeedbackUIView: UIView {
     @IBOutlet weak var placeDescription: UILabel!
     @IBOutlet weak var placeImageCollectionView: UICollectionView!
     @IBOutlet weak var placeFeedbackTableView: UITableView!
+    var onClickCallback: (() -> Void)?
     
+    @IBAction func closeDrawer(_ sender: UIButton) {
+        onClickCallback?()
+    }
     
     
     

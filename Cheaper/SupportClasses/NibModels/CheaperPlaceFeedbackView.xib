@@ -157,6 +157,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xzz-XJ-Wfy">
                     <rect key="frame" x="335" y="30" width="24" height="24"/>
                     <state key="normal" image="icons8-cancel-filled-24.png"/>
+                    <connections>
+                        <action selector="closeDrawer:" destination="-1" eventType="touchUpInside" id="P4x-ua-dIn"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwg-Qv-7He">
                     <rect key="frame" x="190" y="89" width="12.5" height="24"/>

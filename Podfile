@@ -6,10 +6,17 @@ target 'Cheaper' do
   use_frameworks!
 
  #Pods for Cheaper
+
 pod 'Alamofire', '~> 4.5'
 pod 'GoogleMaps'
 pod 'GooglePlaces'
 pod 'Pulley'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
 end
 
   target 'CheaperTests' do
@@ -21,5 +28,6 @@ end
     inherit! :search_paths
     # Pods for testing
   end
+
 
 

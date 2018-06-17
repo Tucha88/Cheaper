@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Pulley
 
 class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+   
+    
     
     var cheaperPlaceFeedback:[PlaceFeedback]?
     var cheaperPlaceInfo:CheaperPalce?
@@ -43,11 +46,20 @@ class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.feedbackView.onClickCallback = {
+            let drawer = self.parent as? PulleyViewController
+            drawer?.setDrawerPosition(position: .closed, animated: true)
+            self.cheaperPlaceInfo = nil
+            self.cheaperPlaceFeedback = nil
+            self.feedbackView.placeFeedbackTableView.reloadData()
+        }
         self.feedbackView.placeFeedbackTableView.delegate = self
         self.feedbackView.placeFeedbackTableView.dataSource = self
         NotificationCenter.default.addObserver(forName: NSNotification.Name.transferToPlaceInfo, object: nil, queue: OperationQueue.main) { (notification) in
             let notification = notification.object as! PlaceAndFeedback
             self.fillViewInfo(info: notification)
+            let drawer = self.parent as? PulleyViewController
+            drawer?.setDrawerPosition(position: .partiallyRevealed, animated: true)
         }
     }
     
@@ -63,5 +75,31 @@ class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableVie
     }
    
 
+    
+}
+
+extension BottomSheetViewController:PulleyDrawerViewControllerDelegate{
+    func collapsedDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
+        return 0 + bottomSafeArea
+    }
+    
+    func partialRevealDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
+        return 200 + bottomSafeArea
+    }
+    
+    func supportedDrawerPositions() -> [PulleyPosition] {
+        return PulleyPosition.all
+    }
+    func drawerPositionDidChange(drawer: PulleyViewController, bottomSafeArea: CGFloat)
+    {
+      
+        if drawer.drawerPosition == .collapsed
+        {
+            drawer.setDrawerPosition(position: .closed, animated: false)
+        }
+       
+    }
+    
+    
     
 }

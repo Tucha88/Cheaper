@@ -17,6 +17,7 @@
 		0503C7C3207A8001000486A0 /* CheaperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503C7C2207A8001000486A0 /* CheaperUITests.swift */; };
 		050DA7F62095B67A00FBA12B /* PlaceAndFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050DA7F52095B67A00FBA12B /* PlaceAndFeedback.swift */; };
 		050DA7F82095B8B400FBA12B /* NotificationNameExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050DA7F72095B8B400FBA12B /* NotificationNameExt.swift */; };
+		051974A420D6C3B6001297AC /* FacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051974A320D6C3B6001297AC /* FacebookLoginViewController.swift */; };
 		051B56932094E9C500F8CA04 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B56922094E9C400F8CA04 /* BottomSheetViewController.swift */; };
 		0544A3D9208219DB00E36EA1 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544A3D8208219DB00E36EA1 /* MapController.swift */; };
 		0544A3E320821F4800E36EA1 /* ReturnMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544A3DC20821F4700E36EA1 /* ReturnMessage.swift */; };
@@ -29,6 +30,7 @@
 		054C2302207FD0CD00157CB9 /* FirstWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054C2301207FD0CD00157CB9 /* FirstWelcomeController.swift */; };
 		054C2304207FD0E300157CB9 /* SecondeWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054C2303207FD0E300157CB9 /* SecondeWelcomeController.swift */; };
 		054C2306207FD0F900157CB9 /* ThirdWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054C2305207FD0F900157CB9 /* ThirdWelcomeController.swift */; };
+		054EB398209F74B100DC16FE /* ApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054EB397209F74B100DC16FE /* ApiCalls.swift */; };
 		0550D2C1207BCECE006F3D52 /* UIButtonViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550D2C0207BCECE006F3D52 /* UIButtonViewExt.swift */; };
 		055A0B83208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055A0B81208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.swift */; };
 		055A0B84208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055A0B82208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.xib */; };
@@ -89,6 +91,7 @@
 		0503C7C4207A8001000486A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		050DA7F52095B67A00FBA12B /* PlaceAndFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAndFeedback.swift; sourceTree = "<group>"; };
 		050DA7F72095B8B400FBA12B /* NotificationNameExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExt.swift; sourceTree = "<group>"; };
+		051974A320D6C3B6001297AC /* FacebookLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginViewController.swift; sourceTree = "<group>"; };
 		051B56922094E9C400F8CA04 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		0544A3D8208219DB00E36EA1 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		0544A3DC20821F4700E36EA1 /* ReturnMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnMessage.swift; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 		054C2301207FD0CD00157CB9 /* FirstWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWelcomeController.swift; sourceTree = "<group>"; };
 		054C2303207FD0E300157CB9 /* SecondeWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondeWelcomeController.swift; sourceTree = "<group>"; };
 		054C2305207FD0F900157CB9 /* ThirdWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdWelcomeController.swift; sourceTree = "<group>"; };
+		054EB397209F74B100DC16FE /* ApiCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCalls.swift; sourceTree = "<group>"; };
 		0550D2C0207BCECE006F3D52 /* UIButtonViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonViewExt.swift; sourceTree = "<group>"; };
 		055A0B81208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheaperPlaceFeedbackTableViewCell.swift; sourceTree = "<group>"; };
 		055A0B82208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheaperPlaceFeedbackTableViewCell.xib; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				0503C7AB207A8000000486A0 /* LaunchScreen.storyboard */,
 				0503C7AE207A8000000486A0 /* Info.plist */,
 				0503C7A6207A8000000486A0 /* Cheaper.xcdatamodeld */,
+				051974A320D6C3B6001297AC /* FacebookLoginViewController.swift */,
 			);
 			path = Cheaper;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 		055A0B89208B8BC90033E98A /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				054EB397209F74B100DC16FE /* ApiCalls.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -510,11 +516,25 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Cheaper/Pods-Cheaper-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/Pulley/Pulley.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pulley.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,6 +615,7 @@
 				0544A3E920821F4800E36EA1 /* CustomError.swift in Sources */,
 				059EF02320878DAC00E1AEC5 /* UITextViewPlaceHolderExt.swift in Sources */,
 				050DA7F82095B8B400FBA12B /* NotificationNameExt.swift in Sources */,
+				051974A420D6C3B6001297AC /* FacebookLoginViewController.swift in Sources */,
 				050DA7F62095B67A00FBA12B /* PlaceAndFeedback.swift in Sources */,
 				051B56932094E9C500F8CA04 /* BottomSheetViewController.swift in Sources */,
 				05F0C867208A630000EA894B /* HistoryTableViewController.swift in Sources */,
@@ -614,6 +635,7 @@
 				055A0B83208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.swift in Sources */,
 				054C2302207FD0CD00157CB9 /* FirstWelcomeController.swift in Sources */,
 				057FB198207A9DBD006E7B6D /* GradientView.swift in Sources */,
+				054EB398209F74B100DC16FE /* ApiCalls.swift in Sources */,
 				0503C7A8207A8000000486A0 /* Cheaper.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
