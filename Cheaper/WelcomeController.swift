@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class WelcomeController: UIViewController {
 
@@ -28,10 +29,14 @@ class WelcomeController: UIViewController {
         self.navigationItem.hidesBackButton = true
                 let firstLaunch = FirstLaunch(userDefaults: .standard, key: "isFirsLaunch")
 
+        
                 if firstLaunch.isFirstLaunch {
                     print("Hello World")
                      self.performSegue(withIdentifier: "Tutorial", sender: self)
                 }
+        if FBSDKAccessToken.current() != nil {
+            self.performSegue(withIdentifier: "MapSegue", sender: nil)
+        }
 
 //        Test code for welcome screen
         

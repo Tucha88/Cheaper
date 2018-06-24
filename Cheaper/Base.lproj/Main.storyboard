@@ -317,13 +317,16 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETd-sB-EHe" customClass="FBSDKButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETd-sB-EHe">
                                 <rect key="frame" x="70" y="492" width="56" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="BgS-a6-5c6"/>
                                     <constraint firstAttribute="height" constant="56" id="Gbh-DX-gax"/>
                                 </constraints>
                                 <state key="normal" image="FacebookLogo"/>
+                                <connections>
+                                    <action selector="loginFacebookPressed:" destination="bWC-e0-3Ch" eventType="touchUpInside" id="AK8-VW-gQI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JH3-3a-kHz">
                                 <rect key="frame" x="194" y="492" width="56" height="56"/>
@@ -362,11 +365,12 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
-                        <outlet property="FacebookLoginBtn" destination="ETd-sB-EHe" id="QvJ-iy-tMz"/>
+                        <outlet property="FacebookLoginBtn" destination="ETd-sB-EHe" id="vQ4-jq-ryn"/>
                         <outlet property="GoogleLoginBtn" destination="JH3-3a-kHz" id="vzC-9u-0V6"/>
                         <outlet property="LoginText" destination="LEK-fu-vb0" id="jdk-Ip-GEh"/>
                         <outlet property="PasswordText" destination="KoX-IS-lgX" id="u9X-3q-B1R"/>
                         <outlet property="SingInBtn" destination="qze-6i-eXm" id="7zk-md-5oz"/>
+                        <segue destination="Mtx-Te-nb0" kind="show" identifier="LoginToMainTabController" id="MIS-bV-ZS1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBB-2A-bjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -481,6 +485,9 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginFunction:" destination="JgP-Zg-2bc" eventType="touchUpInside" id="O1i-C0-Ivd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azc-t1-ZS5">
                                 <rect key="frame" x="194" y="492" width="56" height="56"/>
@@ -493,6 +500,9 @@
                                     <constraint firstAttribute="height" constant="56" id="maW-yR-3MK"/>
                                 </constraints>
                                 <state key="normal" image="FacebookLogo"/>
+                                <connections>
+                                    <action selector="facebookRegisterAction:" destination="JgP-Zg-2bc" eventType="touchUpInside" id="h3X-dH-edP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -528,10 +538,18 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="EmailLoginText" destination="qdS-ZQ-YNu" id="Q0E-1B-Ke8"/>
+                        <outlet property="LoginButton" destination="w9H-U5-z9h" id="sAC-X3-BDN"/>
+                        <outlet property="NickNameText" destination="wmG-Yy-Z0u" id="rmf-NA-c4e"/>
+                        <outlet property="PasswordCheck" destination="R7L-0j-tWW" id="YOG-ux-fwX"/>
+                        <outlet property="PasswordLoginText" destination="zLr-ia-Dcf" id="M1L-Ul-xNH"/>
+                        <segue destination="Mtx-Te-nb0" kind="show" identifier="RegisterToMainMap" action="showDetailViewController:sender:" id="u3d-9q-NCi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vw-q7-nNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="822" y="63"/>
+            <point key="canvasLocation" x="855" y="59"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="2su-6t-Wx9">
@@ -1187,10 +1205,10 @@
             </objects>
             <point key="canvasLocation" x="1550" y="-670"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="pOQ-Ik-IH4">
             <objects>
-                <tabBarController id="Mtx-Te-nb0" sceneMemberID="viewController">
+                <tabBarController id="Mtx-Te-nb0" customClass="MainTabBarViewController" customModule="Cheaper" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i3c-Gd-8d6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1520,4 +1538,7 @@
         <image name="photo_icon" width="29" height="22"/>
         <image name="pin_marker_new.png" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Zh8-sK-GFH"/>
+    </inferredMetricsTieBreakers>
 </document>

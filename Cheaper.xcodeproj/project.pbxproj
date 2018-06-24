@@ -27,6 +27,7 @@
 		0544A3E720821F4800E36EA1 /* LoginStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544A3E020821F4800E36EA1 /* LoginStruct.swift */; };
 		0544A3E820821F4800E36EA1 /* CheaperPalce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544A3E120821F4800E36EA1 /* CheaperPalce.swift */; };
 		0544A3E920821F4800E36EA1 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544A3E220821F4800E36EA1 /* CustomError.swift */; };
+		0546386F20DD5BC70007164A /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0546386E20DD5BC70007164A /* MainTabBarViewController.swift */; };
 		054C2302207FD0CD00157CB9 /* FirstWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054C2301207FD0CD00157CB9 /* FirstWelcomeController.swift */; };
 		054C2304207FD0E300157CB9 /* SecondeWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054C2303207FD0E300157CB9 /* SecondeWelcomeController.swift */; };
 		054C2306207FD0F900157CB9 /* ThirdWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054C2305207FD0F900157CB9 /* ThirdWelcomeController.swift */; };
@@ -45,6 +46,8 @@
 		057FB191207A93BF006E7B6D /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FB190207A93BF006E7B6D /* WelcomeController.swift */; };
 		057FB196207A98E3006E7B6D /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FB195207A98E3006E7B6D /* UIColorExt.swift */; };
 		057FB198207A9DBD006E7B6D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FB197207A9DBD006E7B6D /* GradientView.swift */; };
+		0597021D20DBABA5004689D4 /* ApiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597021C20DBABA5004689D4 /* ApiURL.swift */; };
+		0597021F20DBAE61004689D4 /* HttpProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597021E20DBAE61004689D4 /* HttpProvider.swift */; };
 		059EF02320878DAC00E1AEC5 /* UITextViewPlaceHolderExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EF02220878DAC00E1AEC5 /* UITextViewPlaceHolderExt.swift */; };
 		05AABA6820810F8300A65F92 /* UiTextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AABA6720810F8300A65F92 /* UiTextFieldExt.swift */; };
 		05EDC4522089225C008C0637 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EDC4502089225C008C0637 /* HistoryTableViewCell.swift */; };
@@ -101,6 +104,7 @@
 		0544A3E020821F4800E36EA1 /* LoginStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginStruct.swift; sourceTree = "<group>"; };
 		0544A3E120821F4800E36EA1 /* CheaperPalce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheaperPalce.swift; sourceTree = "<group>"; };
 		0544A3E220821F4800E36EA1 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		0546386E20DD5BC70007164A /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		054C2301207FD0CD00157CB9 /* FirstWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWelcomeController.swift; sourceTree = "<group>"; };
 		054C2303207FD0E300157CB9 /* SecondeWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondeWelcomeController.swift; sourceTree = "<group>"; };
 		054C2305207FD0F900157CB9 /* ThirdWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdWelcomeController.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 		057FB190207A93BF006E7B6D /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		057FB195207A98E3006E7B6D /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		057FB197207A9DBD006E7B6D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		0597021C20DBABA5004689D4 /* ApiURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiURL.swift; sourceTree = "<group>"; };
+		0597021E20DBAE61004689D4 /* HttpProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpProvider.swift; sourceTree = "<group>"; };
 		059EF02220878DAC00E1AEC5 /* UITextViewPlaceHolderExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewPlaceHolderExt.swift; sourceTree = "<group>"; };
 		05AABA6720810F8300A65F92 /* UiTextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiTextFieldExt.swift; sourceTree = "<group>"; };
 		05EDC4502089225C008C0637 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -205,12 +211,13 @@
 				05F0C866208A630000EA894B /* HistoryTableViewController.swift */,
 				0544A3D8208219DB00E36EA1 /* MapController.swift */,
 				051B56922094E9C400F8CA04 /* BottomSheetViewController.swift */,
+				051974A320D6C3B6001297AC /* FacebookLoginViewController.swift */,
+				0546386E20DD5BC70007164A /* MainTabBarViewController.swift */,
 				0503C7A3207A8000000486A0 /* Main.storyboard */,
 				0503C7A9207A8000000486A0 /* Assets.xcassets */,
 				0503C7AB207A8000000486A0 /* LaunchScreen.storyboard */,
 				0503C7AE207A8000000486A0 /* Info.plist */,
 				0503C7A6207A8000000486A0 /* Cheaper.xcdatamodeld */,
-				051974A320D6C3B6001297AC /* FacebookLoginViewController.swift */,
 			);
 			path = Cheaper;
 			sourceTree = "<group>";
@@ -266,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				054EB397209F74B100DC16FE /* ApiCalls.swift */,
+				0597021E20DBAE61004689D4 /* HttpProvider.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -285,6 +293,8 @@
 		057FB18B207A8B7C006E7B6D /* SupportClasses */ = {
 			isa = PBXGroup;
 			children = (
+				0597022020DC19DB004689D4 /* SupportClasses */,
+				0597021B20DBAB80004689D4 /* Interfaces */,
 				055A0B89208B8BC90033E98A /* Networking */,
 				057FB18C207A8BA9006E7B6D /* FirstLaunch.swift */,
 				05F0C868208A708800EA894B /* NibModels */,
@@ -306,6 +316,21 @@
 				050DA7F72095B8B400FBA12B /* NotificationNameExt.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		0597021B20DBAB80004689D4 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				0597021C20DBABA5004689D4 /* ApiURL.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		0597022020DC19DB004689D4 /* SupportClasses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SupportClasses;
 			sourceTree = "<group>";
 		};
 		05F0C868208A708800EA894B /* NibModels */ = {
@@ -615,6 +640,7 @@
 				0544A3E920821F4800E36EA1 /* CustomError.swift in Sources */,
 				059EF02320878DAC00E1AEC5 /* UITextViewPlaceHolderExt.swift in Sources */,
 				050DA7F82095B8B400FBA12B /* NotificationNameExt.swift in Sources */,
+				0546386F20DD5BC70007164A /* MainTabBarViewController.swift in Sources */,
 				051974A420D6C3B6001297AC /* FacebookLoginViewController.swift in Sources */,
 				050DA7F62095B67A00FBA12B /* PlaceAndFeedback.swift in Sources */,
 				051B56932094E9C500F8CA04 /* BottomSheetViewController.swift in Sources */,
@@ -634,6 +660,8 @@
 				0503C7A0207A8000000486A0 /* AppDelegate.swift in Sources */,
 				055A0B83208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.swift in Sources */,
 				054C2302207FD0CD00157CB9 /* FirstWelcomeController.swift in Sources */,
+				0597021D20DBABA5004689D4 /* ApiURL.swift in Sources */,
+				0597021F20DBAE61004689D4 /* HttpProvider.swift in Sources */,
 				057FB198207A9DBD006E7B6D /* GradientView.swift in Sources */,
 				054EB398209F74B100DC16FE /* ApiCalls.swift in Sources */,
 				0503C7A8207A8000000486A0 /* Cheaper.xcdatamodeld in Sources */,
@@ -805,7 +833,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_ACTIVITY_MODE = "";
-				"DEBUG_ACTIVITY_MODE[sdk=iphonesimulator*]" = default;
+				"DEBUG_ACTIVITY_MODE[sdk=iphonesimulator*]" = disable;
 				DEVELOPMENT_TEAM = 3XPA7XH7NF;
 				INFOPLIST_FILE = Cheaper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
