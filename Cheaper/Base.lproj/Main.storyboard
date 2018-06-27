@@ -296,6 +296,9 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signInPressed:" destination="bWC-e0-3Ch" eventType="touchUpInside" id="CSM-h5-xM3"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KoX-IS-lgX" customClass="UiTextFieldExt" customModule="Cheaper" customModuleProvider="target">
                                 <rect key="frame" x="24" y="186" width="272" height="51"/>
@@ -753,10 +756,10 @@
             </objects>
             <point key="canvasLocation" x="1550" y="63"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Options And Profile View Controller-->
         <scene sceneID="p14-TG-XDv">
             <objects>
-                <tableViewController id="V22-Dx-l8r" sceneMemberID="viewController">
+                <tableViewController id="V22-Dx-l8r" customClass="OptionsAndProfileViewController" customModule="Cheaper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Dbi-Qv-NGP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -777,54 +780,33 @@
                                                         <constraint firstAttribute="width" constant="51" id="Upz-Za-Kj4"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWQ-5n-3m4" customClass="UiTextFieldExt" customModule="Cheaper" customModuleProvider="target">
-                                                    <rect key="frame" x="82" y="0.0" width="238" height="50"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wja-Tk-dMH">
+                                                    <rect key="frame" x="86" y="11" width="218" height="39"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="hDx-vJ-J5w"/>
+                                                        <constraint firstAttribute="height" constant="39" id="hH8-fP-nwV"/>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="BorderColor">
-                                                            <color key="value" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="BorderWidth">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="BorderFrameX">
-                                                            <real key="value" value="0.0"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wKh-Dn-10S" customClass="UiTextFieldExt" customModule="Cheaper" customModuleProvider="target">
-                                                    <rect key="frame" x="82" y="49.5" width="230" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="47R-N1-FYQ"/>
-                                                    </constraints>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cm3-Ia-9lj">
+                                                    <rect key="frame" x="86" y="50" width="218" height="39"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="BorderWidth">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="BorderFrameX">
-                                                            <real key="value" value="0.0"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </textField>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="cm3-Ia-9lj" firstAttribute="bottom" secondItem="1cn-ec-Tdv" secondAttribute="bottomMargin" id="0P1-7n-fFh"/>
+                                                <constraint firstItem="cm3-Ia-9lj" firstAttribute="leading" secondItem="Qsc-wW-wAg" secondAttribute="trailing" constant="19" id="0xv-gR-bkf"/>
                                                 <constraint firstItem="Qsc-wW-wAg" firstAttribute="top" secondItem="1cn-ec-Tdv" secondAttribute="top" constant="24.5" id="6QD-6Q-Mig"/>
-                                                <constraint firstAttribute="trailing" secondItem="wKh-Dn-10S" secondAttribute="trailing" constant="8" id="Cgx-wX-m82"/>
-                                                <constraint firstItem="mWQ-5n-3m4" firstAttribute="top" secondItem="1cn-ec-Tdv" secondAttribute="top" id="OFD-WE-IKh"/>
-                                                <constraint firstItem="mWQ-5n-3m4" firstAttribute="leading" secondItem="Qsc-wW-wAg" secondAttribute="trailing" constant="15" id="Twd-sf-pUK"/>
+                                                <constraint firstItem="cm3-Ia-9lj" firstAttribute="top" secondItem="wja-Tk-dMH" secondAttribute="bottom" id="97b-hL-F6h"/>
+                                                <constraint firstItem="wja-Tk-dMH" firstAttribute="top" secondItem="1cn-ec-Tdv" secondAttribute="topMargin" id="Xnk-ef-rLR"/>
                                                 <constraint firstAttribute="bottom" secondItem="Qsc-wW-wAg" secondAttribute="bottom" constant="24.5" id="Zsh-Sy-Vc2"/>
-                                                <constraint firstAttribute="bottom" secondItem="wKh-Dn-10S" secondAttribute="bottom" id="kIw-6s-nSs"/>
-                                                <constraint firstItem="wKh-Dn-10S" firstAttribute="leading" secondItem="Qsc-wW-wAg" secondAttribute="trailing" constant="15" id="sor-RC-OUj"/>
+                                                <constraint firstItem="wja-Tk-dMH" firstAttribute="leading" secondItem="Qsc-wW-wAg" secondAttribute="trailing" constant="19" id="cuz-Rk-ZRj"/>
+                                                <constraint firstItem="wja-Tk-dMH" firstAttribute="trailing" secondItem="1cn-ec-Tdv" secondAttribute="trailingMargin" id="gXH-94-QA6"/>
+                                                <constraint firstItem="cm3-Ia-9lj" firstAttribute="trailing" secondItem="1cn-ec-Tdv" secondAttribute="trailingMargin" id="lkz-LR-h4O"/>
                                                 <constraint firstItem="Qsc-wW-wAg" firstAttribute="leading" secondItem="1cn-ec-Tdv" secondAttribute="leading" constant="16" id="xIe-Ff-BQA"/>
-                                                <constraint firstAttribute="trailing" secondItem="mWQ-5n-3m4" secondAttribute="trailing" id="xWT-e7-1MM"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1000,6 +982,9 @@
                                                     <state key="normal" title="Log Out">
                                                         <color key="titleColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="logoutAction:" destination="V22-Dx-l8r" eventType="touchUpInside" id="zqd-Dy-d1D"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -1014,10 +999,21 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="more" id="BPG-lB-G0A"/>
                     <navigationItem key="navigationItem" id="sbf-lq-e82"/>
+                    <connections>
+                        <outlet property="coffeeSwitch" destination="MaQ-NZ-Aju" id="zib-MJ-sbw"/>
+                        <outlet property="emailText" destination="cm3-Ia-9lj" id="SuN-G9-EwK"/>
+                        <outlet property="imagePlaceholder" destination="Qsc-wW-wAg" id="7Qs-iF-n0C"/>
+                        <outlet property="kosherSwitch" destination="wBb-AM-qT6" id="piF-qf-Fw7"/>
+                        <outlet property="nameText" destination="wja-Tk-dMH" id="coF-uv-R1O"/>
+                        <outlet property="soldierDiscountSwitch" destination="7CU-4o-nvK" id="oxV-N1-pQg"/>
+                        <outlet property="vegeterianSwitch" destination="cFW-c4-46e" id="ndA-tQ-tl2"/>
+                        <segue destination="O7e-Ea-KjH" kind="unwind" identifier="toWelcomeController" unwindAction="unwindSegueWithUnwindSegue:" id="Hdn-v4-HAa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G97-39-m45" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="O7e-Ea-KjH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2482" y="63"/>
+            <point key="canvasLocation" x="2480.625" y="62.323943661971832"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="P6c-Gg-Zg4">
@@ -1539,6 +1535,6 @@
         <image name="pin_marker_new.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zh8-sK-GFH"/>
+        <segue reference="MIS-bV-ZS1"/>
     </inferredMetricsTieBreakers>
 </document>

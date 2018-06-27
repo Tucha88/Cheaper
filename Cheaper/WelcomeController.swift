@@ -37,6 +37,11 @@ class WelcomeController: UIViewController {
         if FBSDKAccessToken.current() != nil {
             self.performSegue(withIdentifier: "MapSegue", sender: nil)
         }
+        let preferences = UserDefaults.standard
+        if preferences.string(forKey: "token") != nil{
+             self.performSegue(withIdentifier: "MapSegue", sender: nil)
+        }
+        
 
 //        Test code for welcome screen
         
@@ -61,6 +66,14 @@ class WelcomeController: UIViewController {
         
         
     }
+    
+    
+    
+    override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
+        
+    }
+    
+    
     
 
   

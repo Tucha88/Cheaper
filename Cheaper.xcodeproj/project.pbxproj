@@ -17,6 +17,7 @@
 		0503C7C3207A8001000486A0 /* CheaperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503C7C2207A8001000486A0 /* CheaperUITests.swift */; };
 		050DA7F62095B67A00FBA12B /* PlaceAndFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050DA7F52095B67A00FBA12B /* PlaceAndFeedback.swift */; };
 		050DA7F82095B8B400FBA12B /* NotificationNameExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050DA7F72095B8B400FBA12B /* NotificationNameExt.swift */; };
+		0513899B20E164CC00FC1BC2 /* OptionsAndProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513899A20E164CC00FC1BC2 /* OptionsAndProfileViewController.swift */; };
 		051974A420D6C3B6001297AC /* FacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051974A320D6C3B6001297AC /* FacebookLoginViewController.swift */; };
 		051B56932094E9C500F8CA04 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B56922094E9C400F8CA04 /* BottomSheetViewController.swift */; };
 		0544A3D9208219DB00E36EA1 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544A3D8208219DB00E36EA1 /* MapController.swift */; };
@@ -55,6 +56,9 @@
 		05F0C867208A630000EA894B /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F0C866208A630000EA894B /* HistoryTableViewController.swift */; };
 		05F0C86B208A70F600EA894B /* CheaperPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F0C869208A70F600EA894B /* CheaperPlaceViewController.swift */; };
 		05F0C86C208A70F600EA894B /* CheaperPlaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05F0C86A208A70F600EA894B /* CheaperPlaceViewController.xib */; };
+		05FC7A0120E0166F00C40B8F /* CommonStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC7A0020E0166F00C40B8F /* CommonStrings.swift */; };
+		05FC7A0320E024FB00C40B8F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC7A0220E024FB00C40B8F /* UserProfile.swift */; };
+		05FC7A0520E0271D00C40B8F /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC7A0420E0271D00C40B8F /* Tags.swift */; };
 		05FD4DB1208E5A10006D0197 /* CheaperPlaceFeedbackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05FD4DB0208E5A10006D0197 /* CheaperPlaceFeedbackView.xib */; };
 		05FD4DB3208E5A91006D0197 /* CheaperPlaceFeedbackUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD4DB2208E5A91006D0197 /* CheaperPlaceFeedbackUIView.swift */; };
 		249DA041CFABE849CABF83C8 /* libPods-CheaperTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D44900178EA61D560C1022D2 /* libPods-CheaperTests.a */; };
@@ -94,6 +98,7 @@
 		0503C7C4207A8001000486A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		050DA7F52095B67A00FBA12B /* PlaceAndFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAndFeedback.swift; sourceTree = "<group>"; };
 		050DA7F72095B8B400FBA12B /* NotificationNameExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExt.swift; sourceTree = "<group>"; };
+		0513899A20E164CC00FC1BC2 /* OptionsAndProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsAndProfileViewController.swift; sourceTree = "<group>"; };
 		051974A320D6C3B6001297AC /* FacebookLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginViewController.swift; sourceTree = "<group>"; };
 		051B56922094E9C400F8CA04 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		0544A3D8208219DB00E36EA1 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
@@ -132,6 +137,9 @@
 		05F0C866208A630000EA894B /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		05F0C869208A70F600EA894B /* CheaperPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheaperPlaceViewController.swift; sourceTree = "<group>"; };
 		05F0C86A208A70F600EA894B /* CheaperPlaceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheaperPlaceViewController.xib; sourceTree = "<group>"; };
+		05FC7A0020E0166F00C40B8F /* CommonStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonStrings.swift; sourceTree = "<group>"; };
+		05FC7A0220E024FB00C40B8F /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		05FC7A0420E0271D00C40B8F /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
 		05FD4DB0208E5A10006D0197 /* CheaperPlaceFeedbackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheaperPlaceFeedbackView.xib; sourceTree = "<group>"; };
 		05FD4DB2208E5A91006D0197 /* CheaperPlaceFeedbackUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheaperPlaceFeedbackUIView.swift; sourceTree = "<group>"; };
 		15133FC40D16D6AA63AB7AD0 /* libPods-CheaperUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CheaperUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,6 +221,7 @@
 				051B56922094E9C400F8CA04 /* BottomSheetViewController.swift */,
 				051974A320D6C3B6001297AC /* FacebookLoginViewController.swift */,
 				0546386E20DD5BC70007164A /* MainTabBarViewController.swift */,
+				0513899A20E164CC00FC1BC2 /* OptionsAndProfileViewController.swift */,
 				0503C7A3207A8000000486A0 /* Main.storyboard */,
 				0503C7A9207A8000000486A0 /* Assets.xcassets */,
 				0503C7AB207A8000000486A0 /* LaunchScreen.storyboard */,
@@ -265,6 +274,8 @@
 				0544A3DF20821F4700E36EA1 /* PlaceFeedback.swift */,
 				0544A3E120821F4800E36EA1 /* CheaperPalce.swift */,
 				050DA7F52095B67A00FBA12B /* PlaceAndFeedback.swift */,
+				05FC7A0220E024FB00C40B8F /* UserProfile.swift */,
+				05FC7A0420E0271D00C40B8F /* Tags.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -322,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				0597021C20DBABA5004689D4 /* ApiURL.swift */,
+				05FC7A0020E0166F00C40B8F /* CommonStrings.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -652,16 +664,20 @@
 				05FD4DB3208E5A91006D0197 /* CheaperPlaceFeedbackUIView.swift in Sources */,
 				0544A3E620821F4800E36EA1 /* PlaceFeedback.swift in Sources */,
 				054C2306207FD0F900157CB9 /* ThirdWelcomeController.swift in Sources */,
+				05FC7A0320E024FB00C40B8F /* UserProfile.swift in Sources */,
 				0544A3E720821F4800E36EA1 /* LoginStruct.swift in Sources */,
+				05FC7A0520E0271D00C40B8F /* Tags.swift in Sources */,
 				0544A3E320821F4800E36EA1 /* ReturnMessage.swift in Sources */,
 				057FB18F207A8D17006E7B6D /* LoginController.swift in Sources */,
 				057FB196207A98E3006E7B6D /* UIColorExt.swift in Sources */,
 				0544A3E820821F4800E36EA1 /* CheaperPalce.swift in Sources */,
 				0503C7A0207A8000000486A0 /* AppDelegate.swift in Sources */,
 				055A0B83208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.swift in Sources */,
+				05FC7A0120E0166F00C40B8F /* CommonStrings.swift in Sources */,
 				054C2302207FD0CD00157CB9 /* FirstWelcomeController.swift in Sources */,
 				0597021D20DBABA5004689D4 /* ApiURL.swift in Sources */,
 				0597021F20DBAE61004689D4 /* HttpProvider.swift in Sources */,
+				0513899B20E164CC00FC1BC2 /* OptionsAndProfileViewController.swift in Sources */,
 				057FB198207A9DBD006E7B6D /* GradientView.swift in Sources */,
 				054EB398209F74B100DC16FE /* ApiCalls.swift in Sources */,
 				0503C7A8207A8000000486A0 /* Cheaper.xcdatamodeld in Sources */,
