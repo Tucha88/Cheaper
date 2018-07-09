@@ -8,14 +8,32 @@
 
 import UIKit
 import Pulley
+import CloudKit
 
-class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource {
+   
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return imagesArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = self.feedbackView.placeImageCollectionView.dequeueReusableCell(withReuseIdentifier: "ImageViewCellID", for: indexPath as IndexPath) as! ImageViewCell
+        
+        cell.imageView.image = imagesArray[indexPath.row]
+        return cell
+    }
+    
    
     
     
     var cheaperPlaceFeedback:[PlaceFeedback]?
     var cheaperPlaceInfo:CheaperPalce?
     @IBOutlet var feedbackView: CheaperPlaceFeedbackUIView!
+    var imagesArray = [UIImage]()
+    let myCellName = "ImageViewCell"
 
     
     func dateFormater(date:Date) -> String {
@@ -40,6 +58,7 @@ class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableVie
         cell.feedbackText.text = cheaperPlaceFeedback![indexPath.row].text
         cell.dateText.text = dateFormater(date: cheaperPlaceFeedback![indexPath.row].time)
         
+        
         return cell
     }
     
@@ -47,20 +66,48 @@ class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         self.feedbackView.onClickCallback = {
-            let drawer = self.parent as? PulleyViewController
-            drawer?.setDrawerPosition(position: .closed, animated: true)
-            self.cheaperPlaceInfo = nil
-            self.cheaperPlaceFeedback = nil
-            self.feedbackView.placeFeedbackTableView.reloadData()
+           self.clearView()
         }
+        self.feedbackView.placeImageCollectionView.register(UINib.init(nibName: myCellName, bundle: nil), forCellWithReuseIdentifier: "ImageViewCellID")
+        
         self.feedbackView.placeFeedbackTableView.delegate = self
         self.feedbackView.placeFeedbackTableView.dataSource = self
+        self.feedbackView.placeImageCollectionView.delegate = self
+        self.feedbackView.placeImageCollectionView.dataSource = self
+
         NotificationCenter.default.addObserver(forName: NSNotification.Name.transferToPlaceInfo, object: nil, queue: OperationQueue.main) { (notification) in
+            self.clearView()
             let notification = notification.object as! PlaceAndFeedback
             self.fillViewInfo(info: notification)
             let drawer = self.parent as? PulleyViewController
             drawer?.setDrawerPosition(position: .partiallyRevealed, animated: true)
+            
+            self.cheaperPlaceFeedback?.forEach({
+                feedbeck in
+                print(feedbeck.jukeid)
+                feedbeck.gallery.forEach({
+                    url in
+                    print(url)
+                    HttpProvider().downloadImgSingl(url: url, errorComp: {
+                        error in
+                        print("there is no image")
+                    }, complition: {
+                        image in
+                        self.imagesArray.append(image)
+                        print("there is image")
+                        DispatchQueue.main.async { // Correct
+                            self.reloadImageView()
+                        }
+
+                    })
+
+                })
+
+            })
         }
+    }
+    func reloadImageView() {
+        self.feedbackView.placeImageCollectionView.reloadData()
     }
     
     func fillViewInfo(info:PlaceAndFeedback) -> Void {
@@ -96,8 +143,19 @@ extension BottomSheetViewController:PulleyDrawerViewControllerDelegate{
         if drawer.drawerPosition == .collapsed
         {
             drawer.setDrawerPosition(position: .closed, animated: false)
+            self.clearView()
         }
        
+    }
+    
+    func clearView() {
+        let drawer = self.parent as? PulleyViewController
+        drawer?.setDrawerPosition(position: .closed, animated: true)
+        self.cheaperPlaceInfo = nil
+        self.cheaperPlaceFeedback = nil
+        self.feedbackView.placeFeedbackTableView.reloadData()
+        self.feedbackView.placeImageCollectionView.reloadData()
+        self.imagesArray = [UIImage]()
     }
     
     

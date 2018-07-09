@@ -17,6 +17,7 @@ pod 'FacebookShare'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
+pod 'Cloudinary', '~> 2.0'
 end
 
   target 'CheaperTests' do

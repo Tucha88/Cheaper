@@ -8,10 +8,31 @@
 
 import Foundation
 import Alamofire
+import Cloudinary
 
-struct HttpProvider {
+class HttpProvider:NSObject {
     let baseUrl:String = "http://52.29.111.199:8080/"
+    var config = CLDConfiguration(cloudName: "cheaperapp", apiKey: "653687966656237")
+    var cloudinary:CLDCloudinary! = nil
     
+    func downloadImgSingl(url:String,errorComp:@escaping (_ message : String)->Void,complition:@escaping (_ message:UIImage)->Void) -> Void{
+        cloudinary = CLDCloudinary(configuration: config)
+        let downloader:CLDDownloader = cloudinary.createDownloader()
+        downloader.fetchImage(url, { progress in
+            // Handle progress
+        }) { (responseImage, error) in
+            // responseImage is an instance of UIImage
+            // error is an instance of NSError
+            guard let responseImage = responseImage else {
+                errorComp("Could not get image")
+                return
+            }
+            complition(responseImage)
+        }
+        
+
+    }
+
     
     func loginUser(url:ApiURL,parameters:Parameters,returnError:@escaping (_ message : String)->Void,complition:@escaping (_ message:Data)->Void) -> Void{
         guard let urlFull = URL(string: baseUrl + url.rawValue) else {

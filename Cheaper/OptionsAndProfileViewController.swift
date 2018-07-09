@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class OptionsAndProfileViewController: UITableViewController {
 
@@ -27,7 +28,6 @@ class OptionsAndProfileViewController: UITableViewController {
             if let userProfile = try? JSONDecoder().decode(UserProfile.self, from: string){
                 nameText.text = userProfile.name
                 emailText.text = userProfile.email
-                
                 
             }
         }

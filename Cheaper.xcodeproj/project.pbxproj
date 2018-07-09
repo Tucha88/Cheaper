@@ -34,6 +34,8 @@
 		054C2306207FD0F900157CB9 /* ThirdWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054C2305207FD0F900157CB9 /* ThirdWelcomeController.swift */; };
 		054EB398209F74B100DC16FE /* ApiCalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054EB397209F74B100DC16FE /* ApiCalls.swift */; };
 		0550D2C1207BCECE006F3D52 /* UIButtonViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550D2C0207BCECE006F3D52 /* UIButtonViewExt.swift */; };
+		05596C7A20EE951B00E78FAB /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05596C7820EE951B00E78FAB /* ImageViewCell.swift */; };
+		05596C7B20EE951B00E78FAB /* ImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05596C7920EE951B00E78FAB /* ImageViewCell.xib */; };
 		055A0B83208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055A0B81208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.swift */; };
 		055A0B84208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055A0B82208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.xib */; };
 		055A0B86208B22380033E98A /* icons8-create-18.png in Resources */ = {isa = PBXBuildFile; fileRef = 055A0B85208B22380033E98A /* icons8-create-18.png */; };
@@ -54,8 +56,6 @@
 		05EDC4522089225C008C0637 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EDC4502089225C008C0637 /* HistoryTableViewCell.swift */; };
 		05EDC4532089225C008C0637 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05EDC4512089225C008C0637 /* HistoryTableViewCell.xib */; };
 		05F0C867208A630000EA894B /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F0C866208A630000EA894B /* HistoryTableViewController.swift */; };
-		05F0C86B208A70F600EA894B /* CheaperPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F0C869208A70F600EA894B /* CheaperPlaceViewController.swift */; };
-		05F0C86C208A70F600EA894B /* CheaperPlaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05F0C86A208A70F600EA894B /* CheaperPlaceViewController.xib */; };
 		05FC7A0120E0166F00C40B8F /* CommonStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC7A0020E0166F00C40B8F /* CommonStrings.swift */; };
 		05FC7A0320E024FB00C40B8F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC7A0220E024FB00C40B8F /* UserProfile.swift */; };
 		05FC7A0520E0271D00C40B8F /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC7A0420E0271D00C40B8F /* Tags.swift */; };
@@ -115,6 +115,8 @@
 		054C2305207FD0F900157CB9 /* ThirdWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdWelcomeController.swift; sourceTree = "<group>"; };
 		054EB397209F74B100DC16FE /* ApiCalls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCalls.swift; sourceTree = "<group>"; };
 		0550D2C0207BCECE006F3D52 /* UIButtonViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonViewExt.swift; sourceTree = "<group>"; };
+		05596C7820EE951B00E78FAB /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
+		05596C7920EE951B00E78FAB /* ImageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageViewCell.xib; sourceTree = "<group>"; };
 		055A0B81208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheaperPlaceFeedbackTableViewCell.swift; sourceTree = "<group>"; };
 		055A0B82208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheaperPlaceFeedbackTableViewCell.xib; sourceTree = "<group>"; };
 		055A0B85208B22380033E98A /* icons8-create-18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-create-18.png"; sourceTree = "<group>"; };
@@ -135,8 +137,6 @@
 		05EDC4502089225C008C0637 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		05EDC4512089225C008C0637 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		05F0C866208A630000EA894B /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
-		05F0C869208A70F600EA894B /* CheaperPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheaperPlaceViewController.swift; sourceTree = "<group>"; };
-		05F0C86A208A70F600EA894B /* CheaperPlaceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheaperPlaceViewController.xib; sourceTree = "<group>"; };
 		05FC7A0020E0166F00C40B8F /* CommonStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonStrings.swift; sourceTree = "<group>"; };
 		05FC7A0220E024FB00C40B8F /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		05FC7A0420E0271D00C40B8F /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
@@ -350,12 +350,12 @@
 			children = (
 				05EDC4502089225C008C0637 /* HistoryTableViewCell.swift */,
 				05EDC4512089225C008C0637 /* HistoryTableViewCell.xib */,
-				05F0C869208A70F600EA894B /* CheaperPlaceViewController.swift */,
-				05F0C86A208A70F600EA894B /* CheaperPlaceViewController.xib */,
 				055A0B81208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.swift */,
 				055A0B82208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.xib */,
-				05FD4DB0208E5A10006D0197 /* CheaperPlaceFeedbackView.xib */,
 				05FD4DB2208E5A91006D0197 /* CheaperPlaceFeedbackUIView.swift */,
+				05FD4DB0208E5A10006D0197 /* CheaperPlaceFeedbackView.xib */,
+				05596C7820EE951B00E78FAB /* ImageViewCell.swift */,
+				05596C7920EE951B00E78FAB /* ImageViewCell.xib */,
 			);
 			path = NibModels;
 			sourceTree = "<group>";
@@ -499,7 +499,6 @@
 				0503C7AD207A8000000486A0 /* LaunchScreen.storyboard in Resources */,
 				05677C132083CBC1002958AD /* pin_marker.png in Resources */,
 				0503C7AA207A8000000486A0 /* Assets.xcassets in Resources */,
-				05F0C86C208A70F600EA894B /* CheaperPlaceViewController.xib in Resources */,
 				0503C7A5207A8000000486A0 /* Main.storyboard in Resources */,
 				05677C172083D22C002958AD /* pin_marker_new.png in Resources */,
 				055A0B84208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.xib in Resources */,
@@ -507,6 +506,7 @@
 				05677C152083D210002958AD /* icons8-marker-filled-45.png in Resources */,
 				05FD4DB1208E5A10006D0197 /* CheaperPlaceFeedbackView.xib in Resources */,
 				055A0B88208B39980033E98A /* icons8-cancel-filled-24.png in Resources */,
+				05596C7B20EE951B00E78FAB /* ImageViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +554,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Cheaper/Pods-Cheaper-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Cloudinary/Cloudinary.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
@@ -566,6 +567,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cloudinary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
@@ -643,7 +645,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				054C2304207FD0E300157CB9 /* SecondeWelcomeController.swift in Sources */,
-				05F0C86B208A70F600EA894B /* CheaperPlaceViewController.swift in Sources */,
 				0544A3D9208219DB00E36EA1 /* MapController.swift in Sources */,
 				057EB79C2087C052008033C7 /* RegisterController.swift in Sources */,
 				057FB18D207A8BA9006E7B6D /* FirstLaunch.swift in Sources */,
@@ -670,6 +671,7 @@
 				0544A3E320821F4800E36EA1 /* ReturnMessage.swift in Sources */,
 				057FB18F207A8D17006E7B6D /* LoginController.swift in Sources */,
 				057FB196207A98E3006E7B6D /* UIColorExt.swift in Sources */,
+				05596C7A20EE951B00E78FAB /* ImageViewCell.swift in Sources */,
 				0544A3E820821F4800E36EA1 /* CheaperPalce.swift in Sources */,
 				0503C7A0207A8000000486A0 /* AppDelegate.swift in Sources */,
 				055A0B83208B1C180033E98A /* CheaperPlaceFeedbackTableViewCell.swift in Sources */,

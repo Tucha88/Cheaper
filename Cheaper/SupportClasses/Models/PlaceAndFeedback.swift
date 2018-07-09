@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct PlaceAndFeedback: Decodable,Encodable {
+struct PlaceAndFeedback: Codable {
     
     let placeInfo : CheaperPalce!
     let feedbackInfo : [PlaceFeedback]!
