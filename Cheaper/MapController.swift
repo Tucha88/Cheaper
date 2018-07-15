@@ -49,6 +49,8 @@ class MapController: UIViewController,CLLocationManagerDelegate,GMSMapViewDelega
         mapView.settings.myLocationButton = true
         let drawer = self.parent as? PulleyViewController
         drawer?.setDrawerPosition(position: .closed, animated: false)
+        let bottomSheet = drawer?.drawerContentViewController as! BottomSheetViewController
+        bottomSheet.addPlace()
         
         
     }
@@ -56,6 +58,7 @@ class MapController: UIViewController,CLLocationManagerDelegate,GMSMapViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(mapView)
+        
 
     }
    
@@ -178,6 +181,12 @@ class MapController: UIViewController,CLLocationManagerDelegate,GMSMapViewDelega
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+}
+
+extension MapController{
+    func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
+        performSegue(withIdentifier: "addPlace", sender: self)
     }
 }
 

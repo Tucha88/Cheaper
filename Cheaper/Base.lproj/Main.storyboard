@@ -121,10 +121,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CheaperLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Qhs-O0-PDr">
-                                <rect key="frame" x="97" y="154" width="126" height="135"/>
+                                <rect key="frame" x="97" y="154" width="127" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="135" id="SbA-eS-Kbh"/>
-                                    <constraint firstAttribute="width" constant="127" id="p0K-SM-Txe"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="127" id="p0K-SM-Txe"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99E-gf-jIk" customClass="UIButtonViewExt" customModule="Cheaper" customModuleProvider="target">
@@ -216,16 +216,17 @@
                             <constraint firstItem="2y9-ob-fs2" firstAttribute="trailing" secondItem="8GA-ug-tWk" secondAttribute="trailing" constant="16" id="14o-M7-Xg2"/>
                             <constraint firstItem="2y9-ob-fs2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Qhs-O0-PDr" secondAttribute="trailing" constant="96" id="25c-ES-ws5"/>
                             <constraint firstItem="C3g-YG-p1P" firstAttribute="bottom" secondItem="2y9-ob-fs2" secondAttribute="bottom" constant="2" id="7cK-Bs-YyJ"/>
-                            <constraint firstItem="2y9-ob-fs2" firstAttribute="trailing" secondItem="99E-gf-jIk" secondAttribute="trailing" constant="16" id="Cko-XV-LUN"/>
+                            <constraint firstItem="8GA-ug-tWk" firstAttribute="top" secondItem="2y9-ob-fs2" secondAttribute="top" constant="8" id="8dm-0Q-uyn"/>
                             <constraint firstItem="99E-gf-jIk" firstAttribute="top" secondItem="Qhs-O0-PDr" secondAttribute="bottom" constant="89" id="DGn-5b-pCC"/>
                             <constraint firstItem="Qhs-O0-PDr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2y9-ob-fs2" secondAttribute="leading" constant="97" id="G7L-6C-RFn"/>
                             <constraint firstItem="iHx-KX-2Jl" firstAttribute="leading" secondItem="2y9-ob-fs2" secondAttribute="leading" constant="16" id="KeF-BN-SU5"/>
+                            <constraint firstItem="2y9-ob-fs2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8GA-ug-tWk" secondAttribute="trailing" id="M4h-X2-2gG"/>
                             <constraint firstItem="99E-gf-jIk" firstAttribute="leading" secondItem="2y9-ob-fs2" secondAttribute="leading" constant="16" id="Mhh-TY-FPX"/>
                             <constraint firstItem="99E-gf-jIk" firstAttribute="centerX" secondItem="2y9-ob-fs2" secondAttribute="centerX" id="OkV-XB-faR"/>
                             <constraint firstItem="C3g-YG-p1P" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2y9-ob-fs2" secondAttribute="leading" constant="42.5" id="R68-7u-s9p"/>
                             <constraint firstItem="2y9-ob-fs2" firstAttribute="trailing" secondItem="iHx-KX-2Jl" secondAttribute="trailing" constant="16" id="aUa-V1-1Vl"/>
                             <constraint firstItem="Qhs-O0-PDr" firstAttribute="top" secondItem="2y9-ob-fs2" secondAttribute="top" constant="90" id="dOa-eO-Jm2"/>
-                            <constraint firstItem="Qhs-O0-PDr" firstAttribute="centerX" secondItem="2y9-ob-fs2" secondAttribute="centerX" id="iqH-34-mvf"/>
+                            <constraint firstItem="8GA-ug-tWk" firstAttribute="leading" secondItem="B0C-9l-bIR" secondAttribute="leading" constant="274" id="pt1-zV-d5A"/>
                             <constraint firstItem="8GA-ug-tWk" firstAttribute="top" secondItem="2y9-ob-fs2" secondAttribute="top" constant="8" id="xoK-mw-97z"/>
                             <constraint firstItem="2y9-ob-fs2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="C3g-YG-p1P" secondAttribute="trailing" constant="42.5" id="ygp-uw-g6h"/>
                         </constraints>
@@ -559,7 +560,7 @@
             <objects>
                 <tableViewController id="WR8-s6-7up" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="XWH-fV-7U3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="295"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -754,7 +755,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8l-oU-IKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1550" y="63"/>
+            <point key="canvasLocation" x="698" y="1728"/>
         </scene>
         <!--Options And Profile View Controller-->
         <scene sceneID="p14-TG-XDv">
@@ -1116,7 +1117,7 @@
             <objects>
                 <tableViewController id="zWp-BZ-RGK" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="voW-Wg-ihT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="295"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -1199,7 +1200,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBr-NF-Msw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1550" y="-670"/>
+            <point key="canvasLocation" x="1808" y="-672"/>
         </scene>
         <!--Main Tab Bar View Controller-->
         <scene sceneID="pOQ-Ik-IH4">
@@ -1424,6 +1425,7 @@
                     <tabBarItem key="tabBarItem" title="Map" image="pin_marker_new.png" selectedImage="pin_marker_new.png" id="koM-aj-kV1"/>
                     <connections>
                         <outlet property="mapView" destination="S1J-Rk-2uz" id="3oU-aM-db2"/>
+                        <segue destination="WR8-s6-7up" kind="show" identifier="addPlace" id="Jin-zO-EtX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vTv-bE-WKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1505,21 +1507,6 @@
             </objects>
             <point key="canvasLocation" x="3257" y="1598"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Aom-ad-h0j">
-            <objects>
-                <viewController id="bFc-hR-Aac" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9c8-Dr-qc5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="98t-Pw-nck"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aug-wk-mBk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1719" y="-792"/>
-        </scene>
     </scenes>
     <resources>
         <image name="AddPlaceIcon" width="118" height="147"/>
@@ -1535,6 +1522,6 @@
         <image name="pin_marker_new.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MIS-bV-ZS1"/>
+        <segue reference="Zh8-sK-GFH"/>
     </inferredMetricsTieBreakers>
 </document>

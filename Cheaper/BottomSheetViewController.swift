@@ -126,6 +126,12 @@ class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableVie
 }
 
 extension BottomSheetViewController:PulleyDrawerViewControllerDelegate{
+    
+    func addPlace() {
+        print("hello world")
+    }
+    
+    
     func collapsedDrawerHeight(bottomSafeArea: CGFloat) -> CGFloat {
         return 0 + bottomSafeArea
     }
