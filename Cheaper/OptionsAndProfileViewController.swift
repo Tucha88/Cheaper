@@ -30,14 +30,7 @@ class OptionsAndProfileViewController: UITableViewController {
                 emailText.text = userProfile.email
                 
             }
-        }
-       
-        
-        
-
-        
-        
-        
+        }   
         
     }
     
