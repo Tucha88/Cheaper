@@ -12,7 +12,6 @@
 		0503C7A5207A8000000486A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0503C7A3207A8000000486A0 /* Main.storyboard */; };
 		0503C7A8207A8000000486A0 /* Cheaper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0503C7A6207A8000000486A0 /* Cheaper.xcdatamodeld */; };
 		0503C7AA207A8000000486A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0503C7A9207A8000000486A0 /* Assets.xcassets */; };
-		0503C7AD207A8000000486A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0503C7AB207A8000000486A0 /* LaunchScreen.storyboard */; };
 		0503C7B8207A8001000486A0 /* CheaperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503C7B7207A8001000486A0 /* CheaperTests.swift */; };
 		0503C7C3207A8001000486A0 /* CheaperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503C7C2207A8001000486A0 /* CheaperUITests.swift */; };
 		050DA7F62095B67A00FBA12B /* PlaceAndFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050DA7F52095B67A00FBA12B /* PlaceAndFeedback.swift */; };
@@ -63,6 +62,9 @@
 		05FD4DB3208E5A91006D0197 /* CheaperPlaceFeedbackUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD4DB2208E5A91006D0197 /* CheaperPlaceFeedbackUIView.swift */; };
 		249DA041CFABE849CABF83C8 /* libPods-CheaperTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D44900178EA61D560C1022D2 /* libPods-CheaperTests.a */; };
 		7D923FA25DC302593E2AAEDE /* Pods_Cheaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2268153AD9E80C08460B3C28 /* Pods_Cheaper.framework */; };
+		84FB2A6A2103A750003E05B9 /* AddFeedbackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB2A692103A750003E05B9 /* AddFeedbackTableViewController.swift */; };
+		84FB2A6C2103A79F003E05B9 /* AddNewPlaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB2A6B2103A79F003E05B9 /* AddNewPlaceController.swift */; };
+		84FB2A702103AE4B003E05B9 /* NewPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB2A6F2103AE4B003E05B9 /* NewPlace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +90,6 @@
 		0503C7A4207A8000000486A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0503C7A7207A8000000486A0 /* Cheaper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cheaper.xcdatamodel; sourceTree = "<group>"; };
 		0503C7A9207A8000000486A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0503C7AC207A8000000486A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0503C7AE207A8000000486A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0503C7B3207A8000000486A0 /* CheaperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheaperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0503C7B7207A8001000486A0 /* CheaperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheaperTests.swift; sourceTree = "<group>"; };
@@ -149,6 +150,9 @@
 		3769E1F828DADF1F8DA8681D /* Pods-Cheaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cheaper/Pods-Cheaper.debug.xcconfig"; sourceTree = "<group>"; };
 		5C03E9B31D4FB8D486A29AD8 /* Pods-Cheaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cheaper/Pods-Cheaper.release.xcconfig"; sourceTree = "<group>"; };
 		62AC5F8417718B07CB00BD1C /* Pods-CheaperUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheaperUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheaperUITests/Pods-CheaperUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		84FB2A692103A750003E05B9 /* AddFeedbackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedbackTableViewController.swift; sourceTree = "<group>"; };
+		84FB2A6B2103A79F003E05B9 /* AddNewPlaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPlaceController.swift; sourceTree = "<group>"; };
+		84FB2A6F2103AE4B003E05B9 /* NewPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlace.swift; sourceTree = "<group>"; };
 		8F6B7AE2097EEAB1530DA868 /* Pods-CheaperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheaperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheaperTests/Pods-CheaperTests.release.xcconfig"; sourceTree = "<group>"; };
 		D44900178EA61D560C1022D2 /* libPods-CheaperTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CheaperTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -206,7 +210,6 @@
 		0503C79E207A8000000486A0 /* Cheaper */ = {
 			isa = PBXGroup;
 			children = (
-				052D7D1F2094913100E51FA3 /* test */,
 				05677C112083CBAF002958AD /* images */,
 				057FB18B207A8B7C006E7B6D /* SupportClasses */,
 				0503C79F207A8000000486A0 /* AppDelegate.swift */,
@@ -222,9 +225,10 @@
 				051974A320D6C3B6001297AC /* FacebookLoginViewController.swift */,
 				0546386E20DD5BC70007164A /* MainTabBarViewController.swift */,
 				0513899A20E164CC00FC1BC2 /* OptionsAndProfileViewController.swift */,
+				84FB2A692103A750003E05B9 /* AddFeedbackTableViewController.swift */,
+				84FB2A6B2103A79F003E05B9 /* AddNewPlaceController.swift */,
 				0503C7A3207A8000000486A0 /* Main.storyboard */,
 				0503C7A9207A8000000486A0 /* Assets.xcassets */,
-				0503C7AB207A8000000486A0 /* LaunchScreen.storyboard */,
 				0503C7AE207A8000000486A0 /* Info.plist */,
 				0503C7A6207A8000000486A0 /* Cheaper.xcdatamodeld */,
 			);
@@ -249,13 +253,6 @@
 			path = CheaperUITests;
 			sourceTree = "<group>";
 		};
-		052D7D1F2094913100E51FA3 /* test */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = test;
-			sourceTree = "<group>";
-		};
 		0544A3DB20821EC500E36EA1 /* ServerResponsesAndRequests */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +273,7 @@
 				050DA7F52095B67A00FBA12B /* PlaceAndFeedback.swift */,
 				05FC7A0220E024FB00C40B8F /* UserProfile.swift */,
 				05FC7A0420E0271D00C40B8F /* Tags.swift */,
+				84FB2A6F2103AE4B003E05B9 /* NewPlace.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,7 +302,6 @@
 		057FB18B207A8B7C006E7B6D /* SupportClasses */ = {
 			isa = PBXGroup;
 			children = (
-				0597022020DC19DB004689D4 /* SupportClasses */,
 				0597021B20DBAB80004689D4 /* Interfaces */,
 				055A0B89208B8BC90033E98A /* Networking */,
 				057FB18C207A8BA9006E7B6D /* FirstLaunch.swift */,
@@ -336,13 +333,6 @@
 				05FC7A0020E0166F00C40B8F /* CommonStrings.swift */,
 			);
 			path = Interfaces;
-			sourceTree = "<group>";
-		};
-		0597022020DC19DB004689D4 /* SupportClasses */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SupportClasses;
 			sourceTree = "<group>";
 		};
 		05F0C868208A708800EA894B /* NibModels */ = {
@@ -496,7 +486,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				055A0B86208B22380033E98A /* icons8-create-18.png in Resources */,
-				0503C7AD207A8000000486A0 /* LaunchScreen.storyboard in Resources */,
 				05677C132083CBC1002958AD /* pin_marker.png in Resources */,
 				0503C7AA207A8000000486A0 /* Assets.xcassets in Resources */,
 				0503C7A5207A8000000486A0 /* Main.storyboard in Resources */,
@@ -652,6 +641,7 @@
 				05AABA6820810F8300A65F92 /* UiTextFieldExt.swift in Sources */,
 				0544A3E920821F4800E36EA1 /* CustomError.swift in Sources */,
 				059EF02320878DAC00E1AEC5 /* UITextViewPlaceHolderExt.swift in Sources */,
+				84FB2A702103AE4B003E05B9 /* NewPlace.swift in Sources */,
 				050DA7F82095B8B400FBA12B /* NotificationNameExt.swift in Sources */,
 				0546386F20DD5BC70007164A /* MainTabBarViewController.swift in Sources */,
 				051974A420D6C3B6001297AC /* FacebookLoginViewController.swift in Sources */,
@@ -671,6 +661,7 @@
 				0544A3E320821F4800E36EA1 /* ReturnMessage.swift in Sources */,
 				057FB18F207A8D17006E7B6D /* LoginController.swift in Sources */,
 				057FB196207A98E3006E7B6D /* UIColorExt.swift in Sources */,
+				84FB2A6C2103A79F003E05B9 /* AddNewPlaceController.swift in Sources */,
 				05596C7A20EE951B00E78FAB /* ImageViewCell.swift in Sources */,
 				0544A3E820821F4800E36EA1 /* CheaperPalce.swift in Sources */,
 				0503C7A0207A8000000486A0 /* AppDelegate.swift in Sources */,
@@ -680,6 +671,7 @@
 				0597021D20DBABA5004689D4 /* ApiURL.swift in Sources */,
 				0597021F20DBAE61004689D4 /* HttpProvider.swift in Sources */,
 				0513899B20E164CC00FC1BC2 /* OptionsAndProfileViewController.swift in Sources */,
+				84FB2A6A2103A750003E05B9 /* AddFeedbackTableViewController.swift in Sources */,
 				057FB198207A9DBD006E7B6D /* GradientView.swift in Sources */,
 				054EB398209F74B100DC16FE /* ApiCalls.swift in Sources */,
 				0503C7A8207A8000000486A0 /* Cheaper.xcdatamodeld in Sources */,
@@ -724,14 +716,6 @@
 				0503C7A4207A8000000486A0 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0503C7AB207A8000000486A0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0503C7AC207A8000000486A0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
