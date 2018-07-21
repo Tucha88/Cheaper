@@ -11,13 +11,13 @@ import FBSDKLoginKit
 import Alamofire
 
 class LoginController: UIViewController,UITextFieldDelegate {
-  
+    
     struct LoginUser:Decodable,Encodable {
         let token:String
         let profile:UserProfile
     }
     
-
+    
     @IBOutlet weak var FacebookLoginBtn: UIButton!
     @IBOutlet weak var GoogleLoginBtn: UIButton!
     @IBOutlet weak var LoginText: UiTextFieldExt!
@@ -29,8 +29,8 @@ class LoginController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        FacebookLoginBtn.readPermissions = ["public_profile","email","user_friends"]
-//        FacebookLoginBtn.delegate = self
+        //        FacebookLoginBtn.readPermissions = ["public_profile","email","user_friends"]
+        //        FacebookLoginBtn.delegate = self
         
         PasswordText.delegate = self
         
@@ -48,8 +48,8 @@ class LoginController: UIViewController,UITextFieldDelegate {
         let httpProv = HttpProvider()
         httpProv.loginUser(url: .LOGIN, parameters: parameters, returnError:
             {error in
-            self.personalyesAlert(alertTitle: "Login error", alertMessage: error)
-        
+                self.personalyesAlert(alertTitle: "Login error", alertMessage: error)
+                
         }, complition: {result in
             let preferences = UserDefaults.standard
             do{
@@ -58,7 +58,7 @@ class LoginController: UIViewController,UITextFieldDelegate {
                 let encodedData = try? JSONEncoder().encode(token.profile)
                 
                 preferences.set(encodedData,forKey: "userProfile")
-                 
+                
                 
                 preferences.set(token.token, forKey: tokenKey)
                 preferences.synchronize()
@@ -86,7 +86,7 @@ class LoginController: UIViewController,UITextFieldDelegate {
         return true
     }
     
-  
+    
     @IBAction func loginFacebookPressed(_ sender: Any) {
         let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
         fbLoginManager.logIn(withReadPermissions: ["public_profile","email"], from: self) { (result, error) -> Void in
@@ -103,7 +103,7 @@ class LoginController: UIViewController,UITextFieldDelegate {
             }
         }
     }
-   
+    
     
     func getFBUserData(){
         if((FBSDKAccessToken.current()) != nil){
@@ -117,7 +117,7 @@ class LoginController: UIViewController,UITextFieldDelegate {
         }
     }
     
-   
+    
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         print("login atempt")

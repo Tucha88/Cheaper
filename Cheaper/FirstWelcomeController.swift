@@ -9,13 +9,13 @@
 import UIKit
 
 class FirstWelcomeController: UIViewController {
-
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -24,6 +24,6 @@ class FirstWelcomeController: UIViewController {
     @IBAction func toSecondWelcome(_ sender: UIButtonViewExt) {
         self.performSegue(withIdentifier: "toSecond", sender: self)
     }
-   
-
+    
+    
 }

@@ -10,46 +10,46 @@ import UIKit
 import FBSDKLoginKit
 
 class WelcomeController: UIViewController {
-
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
     }
-
+    
     
     override func viewDidAppear(_ animated: Bool) {
         self.navigationItem.hidesBackButton = true
-                let firstLaunch = FirstLaunch(userDefaults: .standard, key: "isFirsLaunch")
-
+        let firstLaunch = FirstLaunch(userDefaults: .standard, key: "isFirsLaunch")
         
-                if firstLaunch.isFirstLaunch {
-                    print("Hello World")
-                     self.performSegue(withIdentifier: "Tutorial", sender: self)
-                }
+        
+        if firstLaunch.isFirstLaunch {
+            print("Hello World")
+            self.performSegue(withIdentifier: "Tutorial", sender: self)
+        }
         if FBSDKAccessToken.current() != nil {
             self.performSegue(withIdentifier: "MapSegue", sender: nil)
         }
         let preferences = UserDefaults.standard
         if preferences.string(forKey: "token") != nil{
-             self.performSegue(withIdentifier: "MapSegue", sender: nil)
+            self.performSegue(withIdentifier: "MapSegue", sender: nil)
         }
         
-
-//        Test code for welcome screen
+        
+        //        Test code for welcome screen
         
         
-//        let alwaysFirstLaunch = FirstLaunch(getWasLaunchedBefore: { return false }, setWasLaunchedBefore: { _ in })
-//        if alwaysFirstLaunch.isFirstLaunch {
-//                self.performSegue(withIdentifier: "Tutorial", sender: self)
-//        }
+        //        let alwaysFirstLaunch = FirstLaunch(getWasLaunchedBefore: { return false }, setWasLaunchedBefore: { _ in })
+        //        if alwaysFirstLaunch.isFirstLaunch {
+        //                self.performSegue(withIdentifier: "Tutorial", sender: self)
+        //        }
     }
     
     @IBAction func unwindSegue(unwindSegue: UIStoryboardSegue){
@@ -75,7 +75,7 @@ class WelcomeController: UIViewController {
     
     
     
-
-  
-
+    
+    
+    
 }

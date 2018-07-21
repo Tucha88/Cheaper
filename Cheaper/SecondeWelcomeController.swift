@@ -9,15 +9,15 @@
 import UIKit
 
 class SecondeWelcomeController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-   
+    
+    
     @IBAction func toThirdWelcome(_ sender: UIButtonViewExt) {
         self.performSegue(withIdentifier: "toThird", sender: self)
     }
-
+    
 }

@@ -30,8 +30,8 @@ class MapController: UIViewController,CLLocationManagerDelegate,GMSMapViewDelega
     var cheaperPlaseFeedback:[PlaceFeedback]?
     var cheaperPlaceInfo:CheaperPalce?
     //propertis of placeInfo
-
-  
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -44,7 +44,7 @@ class MapController: UIViewController,CLLocationManagerDelegate,GMSMapViewDelega
         locationManager.distanceFilter = 10
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
-
+        
         mapView.delegate = self
         mapView.settings.myLocationButton = true
         let drawer = self.parent as? PulleyViewController
@@ -54,16 +54,16 @@ class MapController: UIViewController,CLLocationManagerDelegate,GMSMapViewDelega
         
         
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(mapView)
         
-
+        
     }
-   
-
-
+    
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager.stopUpdatingLocation()
         locationManager.delegate = nil
@@ -110,7 +110,7 @@ class MapController: UIViewController,CLLocationManagerDelegate,GMSMapViewDelega
             }
         }
     }
-
+    
     
     
     
@@ -134,13 +134,13 @@ class MapController: UIViewController,CLLocationManagerDelegate,GMSMapViewDelega
     
     func onSendPostRequest(){
         guard let url = URL(string: "http://52.29.111.199:8080/dev/places/near") else {return}
-      
+        
         let postDictionary:Parameters = ["lat" : Double(round(1000*location.coordinate.latitude)/1000),
                                          "lng" : Double(round(1000*location.coordinate.longitude)/1000),
                                          "dist" : 150]
         Alamofire.request(url,method : .post, parameters: postDictionary, encoding: JSONEncoding.default, headers : ["Content-Type":"application/json"]).responseJSON { response in
             guard let code = response.response?.statusCode else{
-                  print("Error: cannot create URL")
+                print("Error: cannot create URL")
                 return
             }
             if code >= 400 {

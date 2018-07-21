@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 class OptionsAndProfileViewController: UITableViewController {
-
+    
     @IBOutlet weak var imagePlaceholder: UIImageView!
     @IBOutlet weak var nameText: UILabel!
     @IBOutlet weak var emailText: UILabel!
@@ -36,13 +36,13 @@ class OptionsAndProfileViewController: UITableViewController {
     
     //implemet logout routine
     @IBAction func logoutAction(_ sender: Any) {
-         let preferences = UserDefaults.standard
+        let preferences = UserDefaults.standard
         preferences.removeObject(forKey: "token")
         preferences.removeObject(forKey: "userProfile")
         preferences.synchronize()
         performSegue(withIdentifier: "toWelcomeController", sender: self)
     }
     
-
-   
+    
+    
 }

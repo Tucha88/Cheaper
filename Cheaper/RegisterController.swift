@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 class RegisterController: UIViewController {
-
+    
     
     
     @IBOutlet weak var LoginButton: UIButton!
@@ -25,16 +25,16 @@ class RegisterController: UIViewController {
     var passwordTextCheck : String = ""
     var nickNameTextCheck : String = ""
     
-//    struct CustomError : Decodable,Encodable {
-//        let field : String
-//        let value : String
-//        let message : String
-//    }
+    //    struct CustomError : Decodable,Encodable {
+    //        let field : String
+    //        let value : String
+    //        let message : String
+    //    }
     
     struct Token : Decodable, Encodable {
         let token : String
     }
-
+    
     
     
     override func viewDidLoad() {
@@ -78,7 +78,7 @@ class RegisterController: UIViewController {
     }
     
     func registrationFunc() {
-
+        
         let parameters : Parameters = ["username" : emailText,
                                        "password" : passwordText,
                                        "name" : nickNameTextCheck]
@@ -101,7 +101,7 @@ class RegisterController: UIViewController {
         })
         
         
-
+        
         
     }
     

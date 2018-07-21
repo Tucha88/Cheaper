@@ -11,7 +11,7 @@ import Pulley
 import CloudKit
 
 class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource {
-   
+    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -26,7 +26,7 @@ class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableVie
         return cell
     }
     
-   
+    
     
     
     var cheaperPlaceFeedback:[PlaceFeedback]?
@@ -34,7 +34,7 @@ class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableVie
     @IBOutlet var feedbackView: CheaperPlaceFeedbackUIView!
     var imagesArray = [UIImage]()
     let myCellName = "ImageViewCell"
-
+    
     
     func dateFormater(date:Date) -> String {
         let formatter = DateFormatter()
@@ -66,7 +66,7 @@ class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         self.feedbackView.onClickCallback = {
-           self.clearView()
+            self.clearView()
         }
         self.feedbackView.placeImageCollectionView.register(UINib.init(nibName: myCellName, bundle: nil), forCellWithReuseIdentifier: "ImageViewCellID")
         
@@ -74,7 +74,7 @@ class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableVie
         self.feedbackView.placeFeedbackTableView.dataSource = self
         self.feedbackView.placeImageCollectionView.delegate = self
         self.feedbackView.placeImageCollectionView.dataSource = self
-
+        
         NotificationCenter.default.addObserver(forName: NSNotification.Name.transferToPlaceInfo, object: nil, queue: OperationQueue.main) { (notification) in
             self.clearView()
             let notification = notification.object as! PlaceAndFeedback
@@ -98,11 +98,11 @@ class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableVie
                         DispatchQueue.main.async { // Correct
                             self.reloadImageView()
                         }
-
+                        
                     })
-
+                    
                 })
-
+                
             })
         }
     }
@@ -120,8 +120,8 @@ class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableVie
         self.cheaperPlaceFeedback = info.feedbackInfo
         self.feedbackView.placeFeedbackTableView.reloadData()
     }
-   
-
+    
+    
     
 }
 
@@ -145,13 +145,13 @@ extension BottomSheetViewController:PulleyDrawerViewControllerDelegate{
     }
     func drawerPositionDidChange(drawer: PulleyViewController, bottomSafeArea: CGFloat)
     {
-      
+        
         if drawer.drawerPosition == .collapsed
         {
             drawer.setDrawerPosition(position: .closed, animated: false)
             self.clearView()
         }
-       
+        
     }
     
     func clearView() {

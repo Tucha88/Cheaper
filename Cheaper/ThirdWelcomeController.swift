@@ -9,15 +9,15 @@
 import UIKit
 
 class ThirdWelcomeController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func unwindToBegining(_ sender: UIButtonViewExt) {
         self.performSegue(withIdentifier: "unwindeToBegin", sender: self)
     }
-  
+    
 }

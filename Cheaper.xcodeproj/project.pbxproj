@@ -12,7 +12,6 @@
 		0503C7A5207A8000000486A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0503C7A3207A8000000486A0 /* Main.storyboard */; };
 		0503C7A8207A8000000486A0 /* Cheaper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0503C7A6207A8000000486A0 /* Cheaper.xcdatamodeld */; };
 		0503C7AA207A8000000486A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0503C7A9207A8000000486A0 /* Assets.xcassets */; };
-		0503C7AD207A8000000486A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0503C7AB207A8000000486A0 /* LaunchScreen.storyboard */; };
 		0503C7B8207A8001000486A0 /* CheaperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503C7B7207A8001000486A0 /* CheaperTests.swift */; };
 		0503C7C3207A8001000486A0 /* CheaperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503C7C2207A8001000486A0 /* CheaperUITests.swift */; };
 		050DA7F62095B67A00FBA12B /* PlaceAndFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050DA7F52095B67A00FBA12B /* PlaceAndFeedback.swift */; };
@@ -63,6 +62,8 @@
 		05FD4DB3208E5A91006D0197 /* CheaperPlaceFeedbackUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FD4DB2208E5A91006D0197 /* CheaperPlaceFeedbackUIView.swift */; };
 		249DA041CFABE849CABF83C8 /* libPods-CheaperTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D44900178EA61D560C1022D2 /* libPods-CheaperTests.a */; };
 		7D923FA25DC302593E2AAEDE /* Pods_Cheaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2268153AD9E80C08460B3C28 /* Pods_Cheaper.framework */; };
+		8456A98D2103248600E28939 /* AddFeedbackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8456A98C2103248600E28939 /* AddFeedbackTableViewController.swift */; };
+		84F9BED02101CFA000BD32CD /* AddNewPlaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9BECF2101CFA000BD32CD /* AddNewPlaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +89,6 @@
 		0503C7A4207A8000000486A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0503C7A7207A8000000486A0 /* Cheaper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cheaper.xcdatamodel; sourceTree = "<group>"; };
 		0503C7A9207A8000000486A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0503C7AC207A8000000486A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0503C7AE207A8000000486A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0503C7B3207A8000000486A0 /* CheaperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheaperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0503C7B7207A8001000486A0 /* CheaperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheaperTests.swift; sourceTree = "<group>"; };
@@ -149,6 +149,8 @@
 		3769E1F828DADF1F8DA8681D /* Pods-Cheaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cheaper/Pods-Cheaper.debug.xcconfig"; sourceTree = "<group>"; };
 		5C03E9B31D4FB8D486A29AD8 /* Pods-Cheaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cheaper/Pods-Cheaper.release.xcconfig"; sourceTree = "<group>"; };
 		62AC5F8417718B07CB00BD1C /* Pods-CheaperUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheaperUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CheaperUITests/Pods-CheaperUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8456A98C2103248600E28939 /* AddFeedbackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeedbackTableViewController.swift; sourceTree = "<group>"; };
+		84F9BECF2101CFA000BD32CD /* AddNewPlaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPlaceController.swift; sourceTree = "<group>"; };
 		8F6B7AE2097EEAB1530DA868 /* Pods-CheaperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheaperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CheaperTests/Pods-CheaperTests.release.xcconfig"; sourceTree = "<group>"; };
 		D44900178EA61D560C1022D2 /* libPods-CheaperTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CheaperTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -222,11 +224,12 @@
 				051974A320D6C3B6001297AC /* FacebookLoginViewController.swift */,
 				0546386E20DD5BC70007164A /* MainTabBarViewController.swift */,
 				0513899A20E164CC00FC1BC2 /* OptionsAndProfileViewController.swift */,
+				84F9BECF2101CFA000BD32CD /* AddNewPlaceController.swift */,
 				0503C7A3207A8000000486A0 /* Main.storyboard */,
 				0503C7A9207A8000000486A0 /* Assets.xcassets */,
-				0503C7AB207A8000000486A0 /* LaunchScreen.storyboard */,
 				0503C7AE207A8000000486A0 /* Info.plist */,
 				0503C7A6207A8000000486A0 /* Cheaper.xcdatamodeld */,
+				8456A98C2103248600E28939 /* AddFeedbackTableViewController.swift */,
 			);
 			path = Cheaper;
 			sourceTree = "<group>";
@@ -451,7 +454,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = YriApps;
 				TargetAttributes = {
 					0503C79B207A8000000486A0 = {
@@ -496,7 +499,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				055A0B86208B22380033E98A /* icons8-create-18.png in Resources */,
-				0503C7AD207A8000000486A0 /* LaunchScreen.storyboard in Resources */,
 				05677C132083CBC1002958AD /* pin_marker.png in Resources */,
 				0503C7AA207A8000000486A0 /* Assets.xcassets in Resources */,
 				0503C7A5207A8000000486A0 /* Main.storyboard in Resources */,
@@ -644,6 +646,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8456A98D2103248600E28939 /* AddFeedbackTableViewController.swift in Sources */,
 				054C2304207FD0E300157CB9 /* SecondeWelcomeController.swift in Sources */,
 				0544A3D9208219DB00E36EA1 /* MapController.swift in Sources */,
 				057EB79C2087C052008033C7 /* RegisterController.swift in Sources */,
@@ -662,6 +665,7 @@
 				0550D2C1207BCECE006F3D52 /* UIButtonViewExt.swift in Sources */,
 				0544A3E420821F4800E36EA1 /* Token.swift in Sources */,
 				0544A3E520821F4800E36EA1 /* PersProfile.swift in Sources */,
+				84F9BED02101CFA000BD32CD /* AddNewPlaceController.swift in Sources */,
 				05FD4DB3208E5A91006D0197 /* CheaperPlaceFeedbackUIView.swift in Sources */,
 				0544A3E620821F4800E36EA1 /* PlaceFeedback.swift in Sources */,
 				054C2306207FD0F900157CB9 /* ThirdWelcomeController.swift in Sources */,
@@ -726,14 +730,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		0503C7AB207A8000000486A0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0503C7AC207A8000000486A0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -751,6 +747,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -758,6 +755,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -808,6 +806,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -815,6 +814,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
