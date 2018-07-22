@@ -7,3 +7,4 @@ Cheaper.xcworkspace
 Cheaper.xcodeproj
 *.xcodeproj
 *.xcworkspace
+Pods/
