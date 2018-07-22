@@ -208,7 +208,6 @@
 		0503C79E207A8000000486A0 /* Cheaper */ = {
 			isa = PBXGroup;
 			children = (
-				052D7D1F2094913100E51FA3 /* test */,
 				05677C112083CBAF002958AD /* images */,
 				057FB18B207A8B7C006E7B6D /* SupportClasses */,
 				0503C79F207A8000000486A0 /* AppDelegate.swift */,
@@ -250,13 +249,6 @@
 				0503C7C4207A8001000486A0 /* Info.plist */,
 			);
 			path = CheaperUITests;
-			sourceTree = "<group>";
-		};
-		052D7D1F2094913100E51FA3 /* test */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = test;
 			sourceTree = "<group>";
 		};
 		0544A3DB20821EC500E36EA1 /* ServerResponsesAndRequests */ = {
@@ -307,7 +299,6 @@
 		057FB18B207A8B7C006E7B6D /* SupportClasses */ = {
 			isa = PBXGroup;
 			children = (
-				0597022020DC19DB004689D4 /* SupportClasses */,
 				0597021B20DBAB80004689D4 /* Interfaces */,
 				055A0B89208B8BC90033E98A /* Networking */,
 				057FB18C207A8BA9006E7B6D /* FirstLaunch.swift */,
@@ -339,13 +330,6 @@
 				05FC7A0020E0166F00C40B8F /* CommonStrings.swift */,
 			);
 			path = Interfaces;
-			sourceTree = "<group>";
-		};
-		0597022020DC19DB004689D4 /* SupportClasses */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SupportClasses;
 			sourceTree = "<group>";
 		};
 		05F0C868208A708800EA894B /* NibModels */ = {
