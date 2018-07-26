@@ -5,6 +5,7 @@
 //  Created by 11111 on 18/04/2018.
 //  Copyright © 2018 YriApps. All rights reserved.
 //
+// Extention to show "Placeholder" text before entering text
 
 import UIKit
 @IBDesignable

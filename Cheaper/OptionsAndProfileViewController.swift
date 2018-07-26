@@ -14,6 +14,7 @@ class OptionsAndProfileViewController: UITableViewController {
     @IBOutlet weak var imagePlaceholder: UIImageView!
     @IBOutlet weak var nameText: UILabel!
     @IBOutlet weak var emailText: UILabel!
+    
     @IBOutlet weak var vegeterianSwitch: UISwitch!
     @IBOutlet weak var coffeeSwitch: UISwitch!
     @IBOutlet weak var kosherSwitch: UISwitch!

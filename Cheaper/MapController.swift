@@ -31,6 +31,8 @@ class MapController: UIViewController,CLLocationManagerDelegate,GMSMapViewDelega
     var cheaperPlaceInfo:CheaperPalce?
     //propertis of placeInfo
     
+    var coordinates:CLLocationCoordinate2D = CLLocationCoordinate2D()
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -185,8 +187,16 @@ class MapController: UIViewController,CLLocationManagerDelegate,GMSMapViewDelega
 }
 
 extension MapController{
+    
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
+        self.coordinates = coordinate
         performSegue(withIdentifier: "addPlace", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let addNewPlaceVC = segue.destination as? AddNewPlaceController else { return }
+        let coordinate = coordinates 
+        addNewPlaceVC.newPlace.lng = coordinate.longitude
+        addNewPlaceVC.newPlace.lat = coordinate.latitude
     }
 }
 
