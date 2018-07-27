@@ -12,7 +12,7 @@ class AddFeedbackTableViewController: UITableViewController,UITextViewDelegate,U
 
     @IBOutlet weak var experienceText: UITextViewPlaceHolderExt!
     
-//    var experienceTxt = String()
+    var experienceTxt = ""
     var photosArr:[UIImage]?
     
     
@@ -63,8 +63,10 @@ class AddFeedbackTableViewController: UITableViewController,UITextViewDelegate,U
         } else {
             photosArr = [image]
         }
-        
         picker.dismiss(animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        experienceTxt = experienceText.text
+    }
 }

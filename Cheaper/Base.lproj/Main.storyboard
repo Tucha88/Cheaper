@@ -611,9 +611,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fd5-BV-ASw">
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="500" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fd5-BV-ASw">
                                                     <rect key="frame" x="100" y="0.0" width="220" height="43.5"/>
-                                                    <state key="normal">
+                                                    <state key="normal" title="Enter your feedback">
                                                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
@@ -788,7 +788,7 @@
                         <outlet property="CoffeeSwitch" destination="kMf-4P-rHM" id="rrm-NC-I8N"/>
                         <outlet property="DiscountSwitch" destination="am6-K4-1qy" id="hux-fm-Uhe"/>
                         <outlet property="KosherSwitch" destination="T9U-Gu-g30" id="SGZ-ed-YCF"/>
-                        <outlet property="placeFeedback" destination="Fd5-BV-ASw" id="beU-SY-5AD"/>
+                        <outlet property="placeFeedbackBtn" destination="Fd5-BV-ASw" id="vbq-7E-Zpg"/>
                         <outlet property="placeName" destination="kRf-hb-I5r" id="dzI-bd-WdW"/>
                         <outlet property="vegetarianSwitch" destination="rjj-os-5W1" id="3Fm-hl-2eJ"/>
                     </connections>
@@ -1234,6 +1234,9 @@
                                                     <state key="normal" title="Button">
                                                         <color key="titleColor" red="0.56862745100000001" green="0.62745098040000002" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="hLN-9g-n9U" kind="unwind" unwindAction="unwindToAddNewPlaceVC:" id="ZVb-vj-wEJ"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1257,6 +1260,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBr-NF-Msw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hLN-9g-n9U" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-208.125" y="1727.6408450704225"/>
         </scene>

@@ -16,10 +16,10 @@ class AddNewPlaceController: UITableViewController,UITextFieldDelegate {
     @IBOutlet weak var DiscountSwitch: UISwitch!
     
     @IBOutlet weak var placeName: UITextField!
-    @IBOutlet weak var placeFeedback: UIButton!
+    @IBOutlet weak var placeFeedbackBtn: UIButton!
     
-    var newPlace = NewPlace()
-    var images:[UIImage]=[]
+    var newPlace:NewPlace = NewPlace()
+    var images:[UIImage]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +27,11 @@ class AddNewPlaceController: UITableViewController,UITextFieldDelegate {
         
         //delegates
         placeName.delegate = self
+        
     }
     
     @IBAction func submitNewPlace(_ sender: UIButton) {
+        
     }
     
     
@@ -38,6 +40,23 @@ class AddNewPlaceController: UITableViewController,UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    @IBAction func unwindToAddNewPlaceVC(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source as? AddFeedbackTableViewController
+        if let imageArr = sourceViewController?.photosArr {
+            if let _ = images{
+                images?.append(contentsOf: imageArr)
+            } else {
+                images = imageArr
+            }
+        }
+        
+        if let experienceText = sourceViewController?.experienceTxt {
+            self.newPlace.comment = experienceText
+            self.placeFeedbackBtn.titleLabel?.text = experienceText
+        }
+        
     }
     
 }
