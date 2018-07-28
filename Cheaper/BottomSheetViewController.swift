@@ -94,7 +94,6 @@ class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableVie
                     }, complition: {
                         image in
                         self.imagesArray.append(image)
-                        print("there is image")
                         DispatchQueue.main.async { // Correct
                             self.reloadImageView()
                         }

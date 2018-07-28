@@ -83,7 +83,6 @@ class MapController: UIViewController,CLLocationManagerDelegate,GMSMapViewDelega
         guard let url = URL(string: "http://52.29.111.199:8080/dev/places/info?jukeId="+(place?.id)!) else {return}
         Alamofire.request(url,method : .get, encoding: JSONEncoding.default, headers : ["Content-Type":"application/json"]).responseJSON { response in
             let result = response.data!
-            print(result)
             guard let code = response.response?.statusCode else{
                 return
             }
@@ -120,19 +119,7 @@ class MapController: UIViewController,CLLocationManagerDelegate,GMSMapViewDelega
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         showCheperPlace(place: marker.userData as? CheaperPalce)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+   
     
     func onSendPostRequest(){
         guard let url = URL(string: "http://52.29.111.199:8080/dev/places/near") else {return}

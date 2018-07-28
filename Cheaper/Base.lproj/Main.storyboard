@@ -751,17 +751,17 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="6PC-1M-9Nj">
                                         <rect key="frame" x="0.0" y="375.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6PC-1M-9Nj" id="GeU-tw-otD">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6PC-1M-9Nj" id="GeU-tw-otD">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30B-2z-Aaj" userLabel="Submit">
-                                                    <rect key="frame" x="16" y="7" width="64" height="33"/>
+                                                    <rect key="frame" x="16" y="3" width="288" height="33"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="33" id="0JI-tK-MAt"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <state key="normal" title="Submint">
+                                                    <state key="normal" title="Submit">
                                                         <color key="titleColor" red="0.56862745098039214" green="0.62745098039215685" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
@@ -770,9 +770,10 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="30B-2z-Aaj" firstAttribute="top" secondItem="GeU-tw-otD" secondAttribute="top" constant="7" id="2sB-tX-dcO"/>
-                                                <constraint firstItem="30B-2z-Aaj" firstAttribute="leading" secondItem="GeU-tw-otD" secondAttribute="leading" constant="16" id="7NT-AG-DkK"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="30B-2z-Aaj" secondAttribute="trailing" constant="240" id="cCj-ZB-Zih"/>
+                                                <constraint firstAttribute="bottom" secondItem="30B-2z-Aaj" secondAttribute="bottom" constant="3" id="8OE-r7-BDd"/>
+                                                <constraint firstAttribute="trailing" secondItem="30B-2z-Aaj" secondAttribute="trailing" constant="16" id="e0E-Qr-wk8"/>
+                                                <constraint firstItem="30B-2z-Aaj" firstAttribute="top" secondItem="GeU-tw-otD" secondAttribute="top" constant="3" id="iex-QJ-GeQ"/>
+                                                <constraint firstItem="30B-2z-Aaj" firstAttribute="leading" secondItem="GeU-tw-otD" secondAttribute="leading" constant="16" id="zlX-sS-ZEj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -790,6 +791,7 @@
                         <outlet property="KosherSwitch" destination="T9U-Gu-g30" id="SGZ-ed-YCF"/>
                         <outlet property="placeFeedbackBtn" destination="Fd5-BV-ASw" id="vbq-7E-Zpg"/>
                         <outlet property="placeName" destination="kRf-hb-I5r" id="dzI-bd-WdW"/>
+                        <outlet property="submitBtn" destination="30B-2z-Aaj" id="3Gr-4E-jHH"/>
                         <outlet property="vegetarianSwitch" destination="rjj-os-5W1" id="3Fm-hl-2eJ"/>
                     </connections>
                 </tableViewController>
