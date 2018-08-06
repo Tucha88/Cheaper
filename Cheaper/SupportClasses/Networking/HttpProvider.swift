@@ -30,9 +30,9 @@ class HttpProvider:NSObject {
             complition(responseImage)
         }
         
-
+        
     }
-
+    
     
     func loginUser(url:ApiURL,parameters:Parameters,returnError:@escaping (_ message : String)->Void,complition:@escaping (_ message:Data)->Void) -> Void{
         guard let urlFull = URL(string: baseUrl + url.rawValue) else {
@@ -57,8 +57,8 @@ class HttpProvider:NSObject {
                         }
                     }
                     else if code == 401 {
-                            returnError("Wrong email or password")
-                            return
+                        returnError("Wrong email or password")
+                        return
                     }
                     return
                 }
@@ -114,5 +114,41 @@ class HttpProvider:NSObject {
                 return
                 
         }
+    }
+    
+    func addNewPlace(parameters:Parameters,returnError:@escaping(_ message:String)->Void,complition:@escaping(_ message:Data)->Void) -> Void {
+        guard let url = URL(string: baseUrl + ApiURL.ADDBAR.rawValue) else {
+            returnError("Could not get url")
+            return
+        }
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers : ["Content-Type":"application/json"])
+            .validate()
+            .responseJSON { response in
+                guard response.result.isFailure else{
+                    
+                    print(String(describing: response.result.error))
+                    guard let code = response.response?.statusCode else{
+                        return
+                    }
+                    if code >= 400 && code < 409 {
+                        do{
+                            let message = try JSONDecoder().decode([CustomError].self, from: response.data!)
+                            returnError(message[0].field + " " + message[0].value + " " + message[0].message)
+                            return
+                        }catch let error{
+                            print(error)
+                        }
+                    }
+                    return
+                }
+                guard let result = response.data else {
+                    returnError("There is no return data")
+                    return
+                }
+                complition(result)
+                return
+                
+        }
+        
     }
 }

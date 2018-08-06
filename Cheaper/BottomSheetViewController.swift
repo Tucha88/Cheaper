@@ -84,10 +84,8 @@ class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableVie
             
             self.cheaperPlaceFeedback?.forEach({
                 feedbeck in
-                print(feedbeck.jukeid)
                 feedbeck.gallery.forEach({
                     url in
-                    print(url)
                     HttpProvider().downloadImgSingl(url: url, errorComp: {
                         error in
                         print("there is no image")
@@ -127,7 +125,6 @@ class BottomSheetViewController: UIViewController,UITableViewDelegate,UITableVie
 extension BottomSheetViewController:PulleyDrawerViewControllerDelegate{
     
     func addPlace() {
-        print("hello world")
     }
     
     

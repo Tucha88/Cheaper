@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import FBSDKLoginKit
 
 class OptionsAndProfileViewController: UITableViewController {
     
@@ -20,6 +21,8 @@ class OptionsAndProfileViewController: UITableViewController {
     @IBOutlet weak var kosherSwitch: UISwitch!
     @IBOutlet weak var soldierDiscountSwitch: UISwitch!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +30,7 @@ class OptionsAndProfileViewController: UITableViewController {
         
         if let string = preferences.object(forKey: "userProfile") as? Data{
             if let userProfile = try? JSONDecoder().decode(UserProfile.self, from: string){
+                print("OptionsAndProfileViewController - got the data of user in")
                 nameText.text = userProfile.name
                 emailText.text = userProfile.email
                 
@@ -38,6 +42,8 @@ class OptionsAndProfileViewController: UITableViewController {
     //implemet logout routine
     @IBAction func logoutAction(_ sender: Any) {
         let preferences = UserDefaults.standard
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
         preferences.removeObject(forKey: "token")
         preferences.removeObject(forKey: "userProfile")
         preferences.synchronize()

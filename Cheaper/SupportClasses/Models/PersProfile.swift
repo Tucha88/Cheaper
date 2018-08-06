@@ -6,11 +6,11 @@
 //  Copyright © 2018 11111. All rights reserved.
 //
 
-import Foundation
-struct PersProfile : Decodable,Encodable {
-    let email:String
-    let name:String
-    let tags:[String]
-    let photo:String
-    
-}
+//import Foundation
+//struct PersProfile : Codable {
+//    let email:String!
+//    let name:String!
+//    let tags:[String]?
+//    let photo:String?
+//    
+//}

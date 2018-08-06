@@ -558,7 +558,7 @@
             <objects>
                 <tableViewController id="WR8-s6-7up" customClass="AddNewPlaceController" customModule="Cheaper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="XWH-fV-7U3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="295"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -1159,7 +1159,7 @@
             <objects>
                 <tableViewController id="zWp-BZ-RGK" customClass="AddFeedbackTableViewController" customModule="Cheaper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="voW-Wg-ihT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="295"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -1237,7 +1237,7 @@
                                                         <color key="titleColor" red="0.56862745100000001" green="0.62745098040000002" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="hLN-9g-n9U" kind="unwind" unwindAction="unwindToAddNewPlaceVC:" id="ZVb-vj-wEJ"/>
+                                                        <segue destination="hLN-9g-n9U" kind="unwind" identifier="unwindToAddNewPlaceVC" unwindAction="unwindToAddNewPlaceVC:" id="ZVb-vj-wEJ"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1258,7 +1258,9 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="dislikeBtn" destination="vQu-Zu-oEg" id="hDF-jr-kTT"/>
                         <outlet property="experienceText" destination="bdA-LD-fav" id="Cn6-ZZ-Qx5"/>
+                        <outlet property="likeBtn" destination="fQK-Rf-jT5" id="voQ-Kj-KCC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PBr-NF-Msw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1468,11 +1470,11 @@
             <objects>
                 <viewController id="Jem-0L-gKn" customClass="MapController" customModule="Cheaper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bzf-p9-UmZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="295"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1J-Rk-2uz" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="295"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -1504,22 +1506,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RcO-L0-FqK">
-                                <rect key="frame" x="0.0" y="-99" width="320" height="295"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RcO-L0-FqK">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <connections>
                                     <segue destination="Jem-0L-gKn" kind="embed" id="pot-wm-8SU"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kut-ka-nTw">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kut-ka-nTw">
                                 <rect key="frame" x="0.0" y="191" width="320" height="377"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="rul-kP-kPk" kind="embed" id="aWz-X9-fmU"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8UV-di-cL6" firstAttribute="bottom" secondItem="RcO-L0-FqK" secondAttribute="bottom" id="9u6-1S-ZgT"/>
+                            <constraint firstAttribute="bottom" secondItem="Kut-ka-nTw" secondAttribute="bottom" id="Cdx-P0-GqW"/>
+                            <constraint firstItem="RcO-L0-FqK" firstAttribute="top" secondItem="8UV-di-cL6" secondAttribute="top" id="GvM-aJ-c4C"/>
+                            <constraint firstItem="Kut-ka-nTw" firstAttribute="trailing" secondItem="8UV-di-cL6" secondAttribute="trailing" id="MES-ie-6iy"/>
+                            <constraint firstItem="Kut-ka-nTw" firstAttribute="leading" secondItem="8UV-di-cL6" secondAttribute="leading" id="Zol-NL-Uck"/>
+                            <constraint firstItem="RcO-L0-FqK" firstAttribute="leading" secondItem="8UV-di-cL6" secondAttribute="leading" id="kjC-JP-6J0"/>
+                            <constraint firstItem="Kut-ka-nTw" firstAttribute="top" secondItem="8UV-di-cL6" secondAttribute="top" constant="127" id="n02-g2-AmQ"/>
+                            <constraint firstItem="RcO-L0-FqK" firstAttribute="trailing" secondItem="8UV-di-cL6" secondAttribute="trailing" id="tYF-nW-Xma"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8UV-di-cL6"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="PinForTabs" selectedImage="PinForTabs" id="pMw-tL-kqf"/>
@@ -1530,7 +1540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rIs-oJ-Llx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2481" y="913"/>
+            <point key="canvasLocation" x="2480.625" y="912.67605633802816"/>
         </scene>
         <!--History Table View Controller-->
         <scene sceneID="vqV-Sj-hds">

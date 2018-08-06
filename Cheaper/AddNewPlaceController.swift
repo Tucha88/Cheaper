@@ -8,6 +8,7 @@
 
 import UIKit
 import Cloudinary
+import Alamofire
 
 class AddNewPlaceController: UITableViewController,UITextFieldDelegate {
     
@@ -20,7 +21,7 @@ class AddNewPlaceController: UITableViewController,UITextFieldDelegate {
     @IBOutlet weak var placeFeedbackBtn: UIButton!
     @IBOutlet weak var submitBtn: UIButton!
     
-    var newPlace:NewPlace = NewPlace()
+    var newPlace:NewPlace?
     var images:[UIImage]?
     
     override func viewDidLoad() {
@@ -33,13 +34,41 @@ class AddNewPlaceController: UITableViewController,UITextFieldDelegate {
     }
     
     @IBAction func submitNewPlace(_ sender: UIButton) {
-        
-        if let image = images{
-           dismiss()
-        }else{
-            dismiss()
-
+        let preferences = UserDefaults.standard
+        guard let placeNameTxt = placeName.text else {
+            //TODO - alert to enter place name
+            return
         }
+        if let string = preferences.object(forKey: "userProfile") as? Data{
+            if let userProfile = try? JSONDecoder().decode(UserProfile.self, from: string){
+                print("AddnewPlaceController - got the data of user in")
+                newPlace?.userNickname = userProfile.name
+                newPlace?.name = placeNameTxt
+                let switchesArr = [vegetarianSwitch,CoffeeSwitch,KosherSwitch,DiscountSwitch]
+                var tags:[String] = []
+                for i in 0...3 {
+                    let tag = switchesArr[i]?.isOn
+                    if tag! {
+                        switch i{
+                        case 0:
+                            tags.append("Vegan")
+                        case 1:
+                            tags.append("Coffe")
+                        case 2:
+                            tags.append("Kosher")
+                        case 3:
+                            tags.append("Soldier")
+                        default:
+                            break
+                        }
+                    }
+                }
+                newPlace?.tag = tags
+                
+                createNewPlace(newPlaceReq: newPlace!)
+            }
+        }
+        
         
     }
     
@@ -75,29 +104,55 @@ class AddNewPlaceController: UITableViewController,UITextFieldDelegate {
                         }).response({
                             (response, error) in
                             if let url = response?.url{
-                                self.newPlace.images.append(url)
+                                if let _ = self.newPlace?.images {
+                                    self.newPlace?.images?.append(url)
+                                }else {
+                                    self.newPlace?.images = [url]
+                                }
+                                self.newPlace?.like = sourceViewController?.likeOrDislike
+                                if let experienceText = sourceViewController?.experienceTxt {
+                                    DispatchQueue.main.async {
+                                        self.newPlace?.comment = experienceText
+                                        self.placeFeedbackBtn.titleLabel?.text = experienceText
+                                        self.placeFeedbackBtn.isUserInteractionEnabled = true
+                                        self.submitBtn.titleLabel?.text = "Please wait"
+                                        self.submitBtn.isUserInteractionEnabled = true
+                                    }
+                                }
                             }else{
                                 //Add error handling
+                                
                             }
                         })
                         
                     }
                 })
             }
-            if let experienceText = sourceViewController?.experienceTxt {
-                DispatchQueue.main.async {
-                    self.newPlace.comment = experienceText
-                    self.placeFeedbackBtn.titleLabel?.text = experienceText
-                    self.placeFeedbackBtn.isUserInteractionEnabled = true
-                    self.submitBtn.titleLabel?.text = "Please wait"
-                    self.submitBtn.isUserInteractionEnabled = true
-                }
-            }
             
         }
-        
-
-        
     }
     
+}
+extension AddNewPlaceController{
+    func createNewPlace(newPlaceReq : NewPlace) {
+        let httpProvider = HttpProvider()
+        let parameters : Parameters = [
+            "name": newPlaceReq.name!,
+            "lat": newPlaceReq.lat!,
+            "lng": newPlaceReq.lng!,
+            "images": newPlaceReq.images!,
+            "tags": newPlaceReq.tag!,
+            "like": newPlaceReq.like!,
+            "comment": newPlaceReq.comment!,
+            "userNickname": newPlaceReq.userNickname!
+        ]
+        print(newPlaceReq)
+        httpProvider.addNewPlace(parameters: parameters, returnError: { (error) in
+            print(error)
+        }) { (response) in
+            
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+    }
 }

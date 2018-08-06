@@ -9,11 +9,14 @@
 import UIKit
 
 class AddFeedbackTableViewController: UITableViewController,UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-
+    
     @IBOutlet weak var experienceText: UITextViewPlaceHolderExt!
+    @IBOutlet weak var likeBtn: UIButton!
+    @IBOutlet weak var dislikeBtn: UIButton!
     
     var experienceTxt = ""
     var photosArr:[UIImage]?
+    var likeOrDislike:Int = 0
     
     
     
@@ -29,12 +32,31 @@ class AddFeedbackTableViewController: UITableViewController,UITextViewDelegate,U
     @IBAction func addPhotos(_ sender: UIButton) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
-        imagePickerController.sourceType = .camera
-        self.present(imagePickerController, animated: true, completion: nil)
+
+        let actionSheet = UIAlertController(title: "Photo source", message: "Choose a source", preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) in
+            imagePickerController.sourceType = .camera
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Library", style: .default, handler: { (action) in
+            imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true, completion: nil)
+       
     }
     @IBAction func addLike(_ sender: UIButton) {
+        likeOrDislike = 1
+        likeBtn.setImage(UIImage(named: "like_pressed"), for: .normal)
+        dislikeBtn.setImage(UIImage(named: "dislike_icon"), for: .normal)
     }
     @IBAction func addDislike(_ sender: UIButton) {
+        likeOrDislike = -1
+        likeBtn.setImage(UIImage(named: "like_icon"), for: .normal)
+        dislikeBtn.setImage(UIImage(named: "dislike_pressed"), for: .normal)
     }
     @IBAction func submiteYourExperinece(_ sender: Any) {
     }
@@ -68,5 +90,14 @@ class AddFeedbackTableViewController: UITableViewController,UITextViewDelegate,U
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         experienceTxt = experienceText.text
+    }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        experienceTxt = experienceText.text
+        if identifier == "unwindToAddNewPlaceVC" {
+            if likeOrDislike == 0 || experienceTxt == "" || photosArr == nil {
+                return false
+            }
+        }
+        return true
     }
 }

@@ -20,5 +20,11 @@ struct UserProfile: Codable{
         self.tags = tags
         self.photo = photo
     }
+    init() {
+        self.email = ""
+        self.name = ""
+        self.tags = [""]
+        self.photo = ""
+    }
     
 }

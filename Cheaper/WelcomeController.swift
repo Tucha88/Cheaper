@@ -28,17 +28,16 @@ class WelcomeController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         self.navigationItem.hidesBackButton = true
         let firstLaunch = FirstLaunch(userDefaults: .standard, key: "isFirsLaunch")
-        
+        let preferences = UserDefaults.standard
         
         if firstLaunch.isFirstLaunch {
-            print("Hello World")
             self.performSegue(withIdentifier: "Tutorial", sender: self)
         }
         if FBSDKAccessToken.current() != nil {
+            print("there is facebook token")
             self.performSegue(withIdentifier: "MapSegue", sender: nil)
-        }
-        let preferences = UserDefaults.standard
-        if preferences.string(forKey: "token") != nil{
+        } else if preferences.string(forKey: "token") != nil{
+            print("there is normal token")
             self.performSegue(withIdentifier: "MapSegue", sender: nil)
         }
         

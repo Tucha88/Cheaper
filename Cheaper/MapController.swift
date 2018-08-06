@@ -82,14 +82,13 @@ class MapController: UIViewController,CLLocationManagerDelegate,GMSMapViewDelega
     func showCheperPlace(place:CheaperPalce?){
         guard let url = URL(string: "http://52.29.111.199:8080/dev/places/info?jukeId="+(place?.id)!) else {return}
         Alamofire.request(url,method : .get, encoding: JSONEncoding.default, headers : ["Content-Type":"application/json"]).responseJSON { response in
-            let result = response.data!
+            _ = response.data!
             guard let code = response.response?.statusCode else{
                 return
             }
             if code == 400 {
                 do{
                     let message = try JSONDecoder().decode([CustomError].self, from: response.data!)
-                    print(message[0])
                     return
                 }catch let error{
                     print(error)
@@ -135,7 +134,6 @@ class MapController: UIViewController,CLLocationManagerDelegate,GMSMapViewDelega
             if code >= 400 {
                 do{
                     let message = try JSONDecoder().decode([CustomError].self, from: response.data!)
-                    print(message[0])
                     return
                 }catch let error{
                     print(error)
@@ -181,9 +179,11 @@ extension MapController{
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let addNewPlaceVC = segue.destination as? AddNewPlaceController else { return }
-        let coordinate = coordinates 
-        addNewPlaceVC.newPlace.lng = coordinate.longitude
-        addNewPlaceVC.newPlace.lat = coordinate.latitude
+        let coordinate = coordinates
+        var newPlace = NewPlace()
+        newPlace.lat = coordinate.latitude
+        newPlace.lng = coordinate.longitude
+        addNewPlaceVC.newPlace = newPlace
     }
 }
 

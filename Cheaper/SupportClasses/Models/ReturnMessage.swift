@@ -9,5 +9,5 @@
 import Foundation
 struct ReturnMessage: Decodable,Encodable  {
     let token:String
-    let profile:PersProfile
+    let profile:UserProfile
 }

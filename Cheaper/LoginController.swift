@@ -12,7 +12,7 @@ import Alamofire
 
 class LoginController: UIViewController,UITextFieldDelegate {
     
-    struct LoginUser:Decodable,Encodable {
+    struct LoginUser:Codable {
         let token:String
         let profile:UserProfile
     }
@@ -110,7 +110,17 @@ class LoginController: UIViewController,UITextFieldDelegate {
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
                     //everything works print the user data
-                    print(FBSDKAccessToken.current().tokenString)
+                    guard let userData = result as? [String:Any] else {
+                        //TODO - add error handling
+                        return
+                    }
+                    let preferences = UserDefaults.standard
+                    let newUser = UserProfile.init(email: userData["email"] as! String, name: userData["name"] as! String, tags:[], photo: "")
+                    let encodedData = try? JSONEncoder().encode(newUser)
+                    print(encodedData)
+                    preferences.set(encodedData,forKey: "userProfile")
+                    preferences.synchronize()
+                    
                     self.performSegue(withIdentifier: "LoginToMainTabController", sender: nil)
                 }
             })
