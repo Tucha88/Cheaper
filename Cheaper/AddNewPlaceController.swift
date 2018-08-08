@@ -39,8 +39,8 @@ class AddNewPlaceController: UITableViewController,UITextFieldDelegate {
             //TODO - alert to enter place name
             return
         }
-        if let string = preferences.object(forKey: "userProfile") as? Data{
-            if let userProfile = try? JSONDecoder().decode(UserProfile.self, from: string){
+        if let userProf = preferences.object(forKey: "userProfile") as? Data{
+            if let userProfile = try? JSONDecoder().decode(UserProfile.self, from: userProf){
                 print("AddnewPlaceController - got the data of user in")
                 newPlace?.userNickname = userProfile.name
                 newPlace?.name = placeNameTxt
@@ -64,8 +64,13 @@ class AddNewPlaceController: UITableViewController,UITextFieldDelegate {
                     }
                 }
                 newPlace?.tag = tags
+                guard let token = preferences.string(forKey: "token") else {
+                    
+                    return
+                }
+                print(token)
                 
-                createNewPlace(newPlaceReq: newPlace!)
+                createNewPlace(newPlaceReq: newPlace!,token: token)
             }
         }
         
@@ -134,7 +139,7 @@ class AddNewPlaceController: UITableViewController,UITextFieldDelegate {
     
 }
 extension AddNewPlaceController{
-    func createNewPlace(newPlaceReq : NewPlace) {
+    func createNewPlace(newPlaceReq : NewPlace,token:String) {
         let httpProvider = HttpProvider()
         let parameters : Parameters = [
             "name": newPlaceReq.name!,
@@ -147,7 +152,7 @@ extension AddNewPlaceController{
             "userNickname": newPlaceReq.userNickname!
         ]
         print(newPlaceReq)
-        httpProvider.addNewPlace(parameters: parameters, returnError: { (error) in
+        httpProvider.addNewPlace(parameters: parameters,token: token, returnError: { (error) in
             print(error)
         }) { (response) in
             

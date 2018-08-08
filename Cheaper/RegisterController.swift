@@ -14,6 +14,8 @@ class RegisterController: UIViewController {
     
     
     @IBOutlet weak var LoginButton: UIButton!
+    @IBOutlet weak var FacebookRegisterBtn: UIButton!
+    @IBOutlet weak var googleRegisterBtn: UIButton!
     
     @IBOutlet weak var EmailLoginText: UITextField!
     @IBOutlet weak var PasswordLoginText: UITextField!
@@ -25,13 +27,8 @@ class RegisterController: UIViewController {
     var passwordTextCheck : String = ""
     var nickNameTextCheck : String = ""
     
-    //    struct CustomError : Decodable,Encodable {
-    //        let field : String
-    //        let value : String
-    //        let message : String
-    //    }
     
-    struct Token : Decodable, Encodable {
+    struct Token : Codable {
         let token : String
     }
     
@@ -41,11 +38,13 @@ class RegisterController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    
     @IBAction func loginFunction(_ sender: Any) {
         if !isTextFieldsProper() {
             return
         }
-        registrationFunc()
+        registrationFunc(email: emailText, password: passwordText, nikName: nickNameTextCheck)
     }
     
     
@@ -77,11 +76,82 @@ class RegisterController: UIViewController {
         return true
     }
     
-    func registrationFunc() {
-        
-        let parameters : Parameters = ["username" : emailText,
-                                       "password" : passwordText,
-                                       "name" : nickNameTextCheck]
+    
+    
+    
+  
+    
+    
+    @IBAction func facebookRegisterAction(_ sender: UIButton) {
+        facebookRegister()
+    }
+    @IBAction func googleRegisterAction(_ sender: UIButton) {
+    }
+    
+    
+}
+
+import FBSDKLoginKit
+extension RegisterController {
+    
+    func facebookRegister() {
+        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        fbLoginManager.logIn(withReadPermissions: ["public_profile","email"], from: self) { (result, error) -> Void in
+            if (error == nil){
+                let fbloginresult : FBSDKLoginManagerLoginResult = result!
+                // if user cancel the login
+                if (result?.isCancelled)!{
+                    return
+                }
+                if(fbloginresult.grantedPermissions.contains("email"))
+                {
+                    self.getFBUserData()
+                }
+            }
+        }
+    }
+    
+    
+    func getFBUserData(){
+        if((FBSDKAccessToken.current()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    //everything works print the user data
+                    guard let userData = result as? [String:Any] else {
+                        //TODO - add error handling
+                        return
+                    }
+                    let preferences = UserDefaults.standard
+                    let newUser : UserProfile = UserProfile.init(email: userData["email"] as! String, name: userData["name"] as! String, tags:[], photo: "")
+                    let encodedData = try? JSONEncoder().encode(newUser)
+                    print(encodedData)
+                    preferences.set(encodedData,forKey: "userProfile")
+                    preferences.synchronize()
+                    self.registrationFunc(email: newUser.email, password: newUser.email, nikName: newUser.name)
+                    
+                }
+            })
+        }
+    }
+    
+}
+
+extension RegisterController {
+    func personalyesAlert(alertTitle : String, alertMessage : String){
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        return
+    }
+}
+
+extension RegisterController {
+    
+    func registrationFunc(email:String, password:String, nikName:String) {
+       
+        let parameters : Parameters = ["username" : email,
+                                       "password" : password,
+                                       "name" : nikName]
         let httpProv = HttpProvider()
         httpProv.registerUser(url: .REGISTERUSER, parameters: parameters, returnError: {error in
             self.personalyesAlert(alertTitle: "Registration error", alertMessage: error)
@@ -102,18 +172,5 @@ class RegisterController: UIViewController {
         
         
         
-        
     }
-    
-    func personalyesAlert(alertTitle : String, alertMessage : String){
-        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-        return
-    }
-    
-    
-    @IBAction func facebookRegisterAction(_ sender: UIButton) {
-    }
-    
 }

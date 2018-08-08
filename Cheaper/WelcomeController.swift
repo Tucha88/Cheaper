@@ -33,11 +33,10 @@ class WelcomeController: UIViewController {
         if firstLaunch.isFirstLaunch {
             self.performSegue(withIdentifier: "Tutorial", sender: self)
         }
-        if FBSDKAccessToken.current() != nil {
-            print("there is facebook token")
-            self.performSegue(withIdentifier: "MapSegue", sender: nil)
-        } else if preferences.string(forKey: "token") != nil{
-            print("there is normal token")
+        //        if FBSDKAccessToken.current() != nil {
+        //            self.performSegue(withIdentifier: "MapSegue", sender: nil)
+        //        } else
+        if preferences.string(forKey: "token") != nil{
             self.performSegue(withIdentifier: "MapSegue", sender: nil)
         }
         

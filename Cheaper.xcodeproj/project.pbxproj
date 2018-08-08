@@ -17,7 +17,6 @@
 		050DA7F62095B67A00FBA12B /* PlaceAndFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050DA7F52095B67A00FBA12B /* PlaceAndFeedback.swift */; };
 		050DA7F82095B8B400FBA12B /* NotificationNameExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050DA7F72095B8B400FBA12B /* NotificationNameExt.swift */; };
 		0513899B20E164CC00FC1BC2 /* OptionsAndProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513899A20E164CC00FC1BC2 /* OptionsAndProfileViewController.swift */; };
-		051974A420D6C3B6001297AC /* FacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051974A320D6C3B6001297AC /* FacebookLoginViewController.swift */; };
 		051B56932094E9C500F8CA04 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051B56922094E9C400F8CA04 /* BottomSheetViewController.swift */; };
 		0544A3D9208219DB00E36EA1 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544A3D8208219DB00E36EA1 /* MapController.swift */; };
 		0544A3E320821F4800E36EA1 /* ReturnMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0544A3DC20821F4700E36EA1 /* ReturnMessage.swift */; };
@@ -100,7 +99,6 @@
 		050DA7F52095B67A00FBA12B /* PlaceAndFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAndFeedback.swift; sourceTree = "<group>"; };
 		050DA7F72095B8B400FBA12B /* NotificationNameExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExt.swift; sourceTree = "<group>"; };
 		0513899A20E164CC00FC1BC2 /* OptionsAndProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsAndProfileViewController.swift; sourceTree = "<group>"; };
-		051974A320D6C3B6001297AC /* FacebookLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginViewController.swift; sourceTree = "<group>"; };
 		051B56922094E9C400F8CA04 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		0544A3D8208219DB00E36EA1 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		0544A3DC20821F4700E36EA1 /* ReturnMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnMessage.swift; sourceTree = "<group>"; };
@@ -222,7 +220,6 @@
 				05F0C866208A630000EA894B /* HistoryTableViewController.swift */,
 				0544A3D8208219DB00E36EA1 /* MapController.swift */,
 				051B56922094E9C400F8CA04 /* BottomSheetViewController.swift */,
-				051974A320D6C3B6001297AC /* FacebookLoginViewController.swift */,
 				0546386E20DD5BC70007164A /* MainTabBarViewController.swift */,
 				0513899A20E164CC00FC1BC2 /* OptionsAndProfileViewController.swift */,
 				84F9BECF2101CFA000BD32CD /* AddNewPlaceController.swift */,
@@ -648,7 +645,6 @@
 				059EF02320878DAC00E1AEC5 /* UITextViewPlaceHolderExt.swift in Sources */,
 				050DA7F82095B8B400FBA12B /* NotificationNameExt.swift in Sources */,
 				0546386F20DD5BC70007164A /* MainTabBarViewController.swift in Sources */,
-				051974A420D6C3B6001297AC /* FacebookLoginViewController.swift in Sources */,
 				050DA7F62095B67A00FBA12B /* PlaceAndFeedback.swift in Sources */,
 				051B56932094E9C500F8CA04 /* BottomSheetViewController.swift in Sources */,
 				05F0C867208A630000EA894B /* HistoryTableViewController.swift in Sources */,

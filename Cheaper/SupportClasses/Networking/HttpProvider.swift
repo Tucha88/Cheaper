@@ -116,12 +116,12 @@ class HttpProvider:NSObject {
         }
     }
     
-    func addNewPlace(parameters:Parameters,returnError:@escaping(_ message:String)->Void,complition:@escaping(_ message:Data)->Void) -> Void {
+    func addNewPlace(parameters:Parameters,token : String, returnError:@escaping(_ message:String)->Void,complition:@escaping(_ message:Data)->Void) -> Void {
         guard let url = URL(string: baseUrl + ApiURL.ADDBAR.rawValue) else {
             returnError("Could not get url")
             return
         }
-        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers : ["Content-Type":"application/json"])
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers : ["Content-Type":"application/json", "Authorization": token])
             .validate()
             .responseJSON { response in
                 guard response.result.isFailure else{
@@ -145,6 +145,11 @@ class HttpProvider:NSObject {
                     returnError("There is no return data")
                     return
                 }
+                guard let code = response.response?.statusCode else{
+                    return
+                }
+
+                print(code)
                 complition(result)
                 return
                 

@@ -39,12 +39,98 @@ class LoginController: UIViewController,UITextFieldDelegate {
         super.viewWillAppear(animated)
     }
     
+    
+    
     @IBAction func signInPressed(_ sender: UIButton) {
         if !isTextFieldsProper(){
             return
         }
-        let parameters : Parameters = ["username" : emailText,
-                                       "password" : passwordText]
+        login(username: emailText, password: passwordText)
+        
+    }
+    
+    func isTextFieldsProper() -> Bool {
+        emailText = LoginText.text ?? ""
+        passwordText = PasswordText.text ?? ""
+        if emailText.isEmpty  {
+            personalyesAlert(alertTitle: "No Email entered", alertMessage: "Enter your email")
+            return false
+        }
+        if passwordText.isEmpty  {
+            personalyesAlert(alertTitle: "No Password entered", alertMessage: "Enter your password")
+            return false
+        }
+        return true
+    }
+    
+    
+  
+    
+    @IBAction func loginFacebookPressed(_ sender: UIButton) {
+        facebookLogin()
+    }
+    
+
+    
+    func personalyesAlert(alertTitle : String, alertMessage : String){
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        return
+    }
+    // keyboard "done" button to hide it
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+
+extension LoginController {
+    fileprivate func facebookLogin() {
+        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
+        fbLoginManager.logIn(withReadPermissions: ["public_profile","email"], from: self) { (result, error) -> Void in
+            if (error == nil){
+                let fbloginresult : FBSDKLoginManagerLoginResult = result!
+                // if user cancel the login
+                if (result?.isCancelled)!{
+                    return
+                }
+                if(fbloginresult.grantedPermissions.contains("email"))
+                {
+                    self.getFBUserData()
+                }
+            }
+        }
+    }
+    
+    func getFBUserData(){
+        if((FBSDKAccessToken.current()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    //everything works print the user data
+                    guard let userData = result as? [String:Any] else {
+                        //TODO - add error handling
+                        return
+                    }
+//                    let preferences = UserDefaults.standard
+                    let newUser = UserProfile.init(email: userData["email"] as! String, name: userData["name"] as! String, tags:[], photo: "")
+//                    let encodedData = try? JSONEncoder().encode(newUser)
+//
+//                    preferences.set(encodedData,forKey: "userProfile")
+//                    preferences.synchronize()
+                    self.login(username: newUser.email, password: newUser.email)
+                }
+            })
+        }
+    }
+}
+
+
+extension LoginController {
+    fileprivate func login(username: String,password : String) {
+        let parameters : Parameters = ["username" : username,
+                                       "password" : password]
         let httpProv = HttpProvider()
         httpProv.loginUser(url: .LOGIN, parameters: parameters, returnError:
             {error in
@@ -69,83 +155,5 @@ class LoginController: UIViewController,UITextFieldDelegate {
                 
             }
         })
-        
-    }
-    
-    func isTextFieldsProper() -> Bool {
-        emailText = LoginText.text ?? ""
-        passwordText = PasswordText.text ?? ""
-        if emailText.isEmpty  {
-            personalyesAlert(alertTitle: "No Email entered", alertMessage: "Enter your email")
-            return false
-        }
-        if passwordText.isEmpty  {
-            personalyesAlert(alertTitle: "No Password entered", alertMessage: "Enter your password")
-            return false
-        }
-        return true
-    }
-    
-    
-    @IBAction func loginFacebookPressed(_ sender: Any) {
-        let fbLoginManager : FBSDKLoginManager = FBSDKLoginManager()
-        fbLoginManager.logIn(withReadPermissions: ["public_profile","email"], from: self) { (result, error) -> Void in
-            if (error == nil){
-                let fbloginresult : FBSDKLoginManagerLoginResult = result!
-                // if user cancel the login
-                if (result?.isCancelled)!{
-                    return
-                }
-                if(fbloginresult.grantedPermissions.contains("email"))
-                {
-                    self.getFBUserData()
-                }
-            }
-        }
-    }
-    
-    
-    func getFBUserData(){
-        if((FBSDKAccessToken.current()) != nil){
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
-                if (error == nil){
-                    //everything works print the user data
-                    guard let userData = result as? [String:Any] else {
-                        //TODO - add error handling
-                        return
-                    }
-                    let preferences = UserDefaults.standard
-                    let newUser = UserProfile.init(email: userData["email"] as! String, name: userData["name"] as! String, tags:[], photo: "")
-                    let encodedData = try? JSONEncoder().encode(newUser)
-                    print(encodedData)
-                    preferences.set(encodedData,forKey: "userProfile")
-                    preferences.synchronize()
-                    
-                    self.performSegue(withIdentifier: "LoginToMainTabController", sender: nil)
-                }
-            })
-        }
-    }
-    
-    
-    
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        print("login atempt")
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        print("logout atempt")
-    }
-    
-    func personalyesAlert(alertTitle : String, alertMessage : String){
-        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-        return
-    }
-    // keyboard "done" button to hide it
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }

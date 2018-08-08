@@ -491,10 +491,6 @@
                                     <action selector="loginFunction:" destination="JgP-Zg-2bc" eventType="touchUpInside" id="O1i-C0-Ivd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azc-t1-ZS5">
-                                <rect key="frame" x="194" y="492" width="56" height="56"/>
-                                <state key="normal" image="GoogleLogo"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqn-Ln-2mi">
                                 <rect key="frame" x="70" y="492" width="56" height="56"/>
                                 <constraints>
@@ -504,6 +500,13 @@
                                 <state key="normal" image="FacebookLogo"/>
                                 <connections>
                                     <action selector="facebookRegisterAction:" destination="JgP-Zg-2bc" eventType="touchUpInside" id="h3X-dH-edP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azc-t1-ZS5">
+                                <rect key="frame" x="194" y="492" width="56" height="56"/>
+                                <state key="normal" image="GoogleLogo"/>
+                                <connections>
+                                    <action selector="googleRegisterAction:" destination="JgP-Zg-2bc" eventType="touchUpInside" id="e5h-Da-wL7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -542,10 +545,12 @@
                     </view>
                     <connections>
                         <outlet property="EmailLoginText" destination="qdS-ZQ-YNu" id="Q0E-1B-Ke8"/>
+                        <outlet property="FacebookRegisterBtn" destination="jqn-Ln-2mi" id="CHQ-o3-Tbj"/>
                         <outlet property="LoginButton" destination="w9H-U5-z9h" id="sAC-X3-BDN"/>
                         <outlet property="NickNameText" destination="wmG-Yy-Z0u" id="rmf-NA-c4e"/>
                         <outlet property="PasswordCheck" destination="R7L-0j-tWW" id="YOG-ux-fwX"/>
                         <outlet property="PasswordLoginText" destination="zLr-ia-Dcf" id="M1L-Ul-xNH"/>
+                        <outlet property="googleRegisterBtn" destination="Azc-t1-ZS5" id="yAg-kM-ciE"/>
                         <segue destination="Mtx-Te-nb0" kind="show" identifier="RegisterToMainMap" id="u3d-9q-NCi"/>
                     </connections>
                 </viewController>
@@ -1596,6 +1601,6 @@
         <image name="pin_marker_new.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zh8-sK-GFH"/>
+        <segue reference="u3d-9q-NCi"/>
     </inferredMetricsTieBreakers>
 </document>
