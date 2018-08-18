@@ -12,7 +12,7 @@ struct NewPlace:Codable {
     var lat:Double?
     var lng:Double?
     var images:[String]?
-    var tag:[String]?
+    var tags:[String]?
     var like:Int?
     var comment:String?
     var userNickname:String?

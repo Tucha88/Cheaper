@@ -124,7 +124,6 @@ extension RegisterController {
                     let preferences = UserDefaults.standard
                     let newUser : UserProfile = UserProfile.init(email: userData["email"] as! String, name: userData["name"] as! String, tags:[], photo: "")
                     let encodedData = try? JSONEncoder().encode(newUser)
-                    print(encodedData)
                     preferences.set(encodedData,forKey: "userProfile")
                     preferences.synchronize()
                     self.registrationFunc(email: newUser.email, password: newUser.email, nikName: newUser.name)

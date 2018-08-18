@@ -134,23 +134,21 @@ class HttpProvider:NSObject {
                         do{
                             let message = try JSONDecoder().decode([CustomError].self, from: response.data!)
                             returnError(message[0].field + " " + message[0].value + " " + message[0].message)
+                           
                             return
                         }catch let error{
                             print(error)
                         }
+                    }else if code == 200 {
+                        guard let result = response.data else {
+                            returnError("There is no return data")
+                            return
+                        }
+                        complition(result)
+                        return
                     }
                     return
                 }
-                guard let result = response.data else {
-                    returnError("There is no return data")
-                    return
-                }
-                guard let code = response.response?.statusCode else{
-                    return
-                }
-
-                print(code)
-                complition(result)
                 return
                 
         }

@@ -181,8 +181,11 @@ extension MapController{
         guard let addNewPlaceVC = segue.destination as? AddNewPlaceController else { return }
         let coordinate = coordinates
         var newPlace = NewPlace()
-        newPlace.lat = coordinate.latitude
-        newPlace.lng = coordinate.longitude
+        let lat : Double = (coordinate.latitude * 1000).rounded() / 1000
+        let lng : Double = (coordinate.longitude * 1000).rounded() / 1000
+        
+        newPlace.lat = lat
+        newPlace.lng = lng
         addNewPlaceVC.newPlace = newPlace
     }
 }
